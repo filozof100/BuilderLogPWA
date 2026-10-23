@@ -1,0 +1,38 @@
+{
+  "durationMs": 960,
+  "loop": true,
+  "frames": [
+    {
+      "src": "construction_loading_1.svg",
+      "durationMs": 120
+    },
+    {
+      "src": "construction_loading_2.svg",
+      "durationMs": 120
+    },
+    {
+      "src": "construction_loading_3.svg",
+      "durationMs": 120
+    },
+    {
+      "src": "construction_loading_4.svg",
+      "durationMs": 120
+    },
+    {
+      "src": "construction_loading_5.svg",
+      "durationMs": 120
+    },
+    {
+      "src": "construction_loading_6.svg",
+      "durationMs": 120
+    },
+    {
+      "src": "construction_loading_7.svg",
+      "durationMs": 120
+    },
+    {
+      "src": "construction_loading_8.svg",
+      "durationMs": 120
+    }
+  ]
+}

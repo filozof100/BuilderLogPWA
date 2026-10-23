@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Back folder part -->
+    <path
+        android:fillColor="#111111"
+        android:pathData="
+            M4.2,4.8
+            H10
+            C10.5,4.8 10.9,5 11.2,5.3
+            L12.3,6.4
+            H19.8
+            C21,6.4 22,7.4 22,8.6
+            V9.2
+            H4.2
+            C3.2,9.2 2.3,10 2.3,11.1
+            V6.7
+            C2.3,5.6 3.1,4.8 4.2,4.8
+            Z" />
+
+    <!-- Front folder part -->
+    <path
+        android:fillColor="#111111"
+        android:pathData="
+            M4.1,9.5
+            H19.9
+            C21.1,9.5 22,10.4 22,11.6
+            V18.7
+            C22,19.9 21.1,20.8 19.9,20.8
+            H4.1
+            C2.9,20.8 2,19.9 2,18.7
+            V11.6
+            C2,10.4 2.9,9.5 4.1,9.5
+            Z" />
+
+</vector>

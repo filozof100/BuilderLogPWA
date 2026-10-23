@@ -1,0 +1,65 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="104dp"
+    android:height="96dp"
+    android:viewportWidth="104"
+    android:viewportHeight="96">
+
+    <!-- White document -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,10 L60,10 L80,30 L80,86 L24,86 Z" />
+
+    <!-- Green outline -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#2EAD57"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M24,10 L60,10 L80,30 L80,86 L24,86 Z" />
+
+    <!-- Fold -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#2EAD57"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M60,10 L60,30 L80,30" />
+
+    <!-- Centered Excel badge -->
+    <path
+        android:fillColor="#2EAD57"
+        android:pathData="M41,40 L63,40 L63,70 L41,70 Z" />
+
+    <!-- Centered white X -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M46,47 L58,63 M58,47 L46,63" />
+
+    <!-- Small subtle lines on the right -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#2EAD57"
+        android:strokeWidth="2.4"
+        android:strokeLineCap="round"
+        android:pathData="M67,46 L74,46" />
+
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#2EAD57"
+        android:strokeWidth="2.4"
+        android:strokeLineCap="round"
+        android:pathData="M67,53 L74,53" />
+
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#2EAD57"
+        android:strokeWidth="2.4"
+        android:strokeLineCap="round"
+        android:pathData="M67,60 L72,60" />
+
+</vector>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Classic floppy-disk save icon, black, no background. -->
+
+    <!-- Outer disk shape -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#111111"
+        android:strokeWidth="1.9"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M4.5,3.5
+                          L16.8,3.5
+                          L20.5,7.2
+                          L20.5,19.5
+                          Q20.5,20.5 19.5,20.5
+                          L4.5,20.5
+                          Q3.5,20.5 3.5,19.5
+                          L3.5,4.5
+                          Q3.5,3.5 4.5,3.5 Z" />
+
+    <!-- Top label / metal part -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#111111"
+        android:strokeWidth="1.7"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M7,3.8
+                          L7,8.2
+                          L16.3,8.2
+                          L16.3,3.8" />
+
+    <!-- Small notch on top label -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#111111"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M14.2,5.1 L14.2,7" />
+
+    <!-- Bottom paper label -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#111111"
+        android:strokeWidth="1.7"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M7,13.2
+                          L17,13.2
+                          L17,20.3
+                          L7,20.3
+                          Z" />
+
+    <!-- Label text lines -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#111111"
+        android:strokeWidth="1.45"
+        android:strokeLineCap="round"
+        android:pathData="M9,15.7 L15,15.7
+                          M9,18 L13.6,18" />
+
+</vector>

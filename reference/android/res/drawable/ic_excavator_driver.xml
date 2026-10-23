@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+
+    <!-- Hard hat -->
+    <path
+        android:fillColor="#111827"
+        android:pathData="M 160.4 132.9
+                          L 160.4 135.9
+                          L 165 142.1
+                          L 347 142.1
+                          L 351.6 137.5
+                          L 350.1 128.3
+                          L 347 125.2
+                          L 337.8 122.2
+                          L 334.8 99.2
+                          L 325.6 79.4
+                          L 304.2 57.9
+                          L 291.9 53.4
+                          L 284.3 96.2
+                          L 281.2 99.2
+                          L 276.6 96.2
+                          L 278.2 44.2
+                          L 275.1 38.1
+                          L 270.5 35
+                          L 241.5 35
+                          L 236.9 38.1
+                          L 233.8 44.2
+                          L 233.8 62.5
+                          L 235.4 64.1
+                          L 235.4 97.7
+                          L 233.8 99.2
+                          L 230.8 99.2
+                          L 227.7 96.2
+                          L 220.1 53.4
+                          L 215.5 53.4
+                          L 203.2 61
+                          L 189.5 74.8
+                          L 178.8 94.6
+                          L 174.2 120.6
+                          L 171.1 123.7
+                          L 165 125.2
+                          Z" />
+
+    <!-- Head -->
+    <path
+        android:fillColor="#111827"
+        android:pathData="M 180.3 161.9
+                          L 183.4 191
+                          L 191 209.4
+                          L 198.6 220.1
+                          L 210.9 232.3
+                          L 229.2 243
+                          L 246.1 247.6
+                          L 273.6 246.1
+                          L 282.8 243
+                          L 301.1 232.3
+                          L 313.4 220.1
+                          L 322.5 206.3
+                          L 328.6 191
+                          L 331.7 175.7
+                          L 331.7 160.4
+                          L 330.2 158.9
+                          L 181.8 158.9
+                          Z" />
+
+    <!-- Upper overall panel -->
+    <path
+        android:fillColor="#111827"
+        android:pathData="M 204.8 259.8
+                          L 204.8 322.5
+                          L 307.2 322.5
+                          L 307.2 259.8
+                          L 296.5 256.8
+                          L 279.7 265.9
+                          L 267.5 269
+                          L 244.5 269
+                          L 221.6 261.4
+                          L 215.5 256.8
+                          Z" />
+
+    <!-- Left shoulder and arm -->
+    <path
+        android:fillColor="#111827"
+        android:pathData="M 172.6 269
+                          L 163.5 272.1
+                          L 145.1 282.8
+                          L 129.8 298.1
+                          L 123.7 308.8
+                          L 132.9 317.9
+                          L 139 336.3
+                          L 135.9 354.6
+                          L 126.8 368.4
+                          L 135.9 420.4
+                          L 145.1 417.4
+                          L 149.7 412.8
+                          L 165 383.7
+                          L 165 356.2
+                          L 174.2 328.6
+                          L 174.2 270.5
+                          Z" />
+
+    <!-- Right shoulder and arm -->
+    <path
+        android:fillColor="#111827"
+        android:pathData="M 337.8 269
+                          L 337.8 330.2
+                          L 347 359.2
+                          L 347 385.2
+                          L 362.3 414.3
+                          L 369.9 420.4
+                          L 374.5 420.4
+                          L 383.7 376.1
+                          L 383.7 366.9
+                          L 377.6 359.2
+                          L 373 348.5
+                          L 373 331.7
+                          L 377.6 319.5
+                          L 386.8 307.2
+                          L 379.1 295
+                          L 362.3 279.7
+                          Z" />
+
+    <!-- Left joystick knob -->
+    <path
+        android:fillColor="#111827"
+        android:pathData="M 90.1 311.8
+                          L 77.8 316.4
+                          L 70.2 324.1
+                          L 65.6 334.8
+                          L 65.6 343.9
+                          L 70.2 356.2
+                          L 77.8 363.8
+                          L 88.5 368.4
+                          L 100.8 368.4
+                          L 113 362.3
+                          L 119.1 354.6
+                          L 122.2 347
+                          L 122.2 333.2
+                          L 119.1 325.6
+                          L 109.9 316.4
+                          L 97.7 311.8
+                          Z" />
+
+    <!-- Right joystick knob -->
+    <path
+        android:fillColor="#111827"
+        android:pathData="M 412.8 311.8
+                          L 403.6 314.9
+                          L 394.4 322.5
+                          L 391.4 327.1
+                          L 388.3 340.9
+                          L 394.4 357.7
+                          L 400.5 363.8
+                          L 411.2 368.4
+                          L 423.5 368.4
+                          L 431.1 365.4
+                          L 440.3 357.7
+                          L 444.9 350.1
+                          L 446.4 336.3
+                          L 440.3 322.5
+                          L 435.7 317.9
+                          L 421.9 311.8
+                          Z" />
+
+    <!-- Main overall bib -->
+    <path
+        android:fillColor="#111827"
+        android:pathData="M 191 351.6
+                          L 191 473.9
+                          L 192.5 475.5
+                          L 319.5 475.5
+                          L 321 473.9
+                          L 321 353.1
+                          L 317.9 348.5
+                          L 194.1 348.5
+                          Z" />
+
+    <!-- Left joystick lever -->
+    <path
+        android:fillColor="#111827"
+        android:pathData="M 111.5 371.5
+                          L 99.2 377.6
+                          L 85.5 376.1
+                          L 93.1 423.5
+                          L 96.2 428.1
+                          L 120.6 428.1
+                          L 122.2 426.5
+                          Z" />
+
+    <!-- Right joystick lever -->
+    <path
+        android:fillColor="#111827"
+        android:pathData="M 400.5 371.5
+                          L 397.5 379.1
+                          L 389.8 428.1
+                          L 415.8 428.1
+                          L 426.5 376.1
+                          L 411.2 377.6
+                          Z" />
+
+    <!-- Left joystick base -->
+    <path
+        android:fillColor="#111827"
+        android:pathData="M 59.5 470.9
+                          L 59.5 475.5
+                          L 163.5 475.5
+                          L 165 473.9
+                          L 152.8 446.4
+                          L 145.1 440.3
+                          L 77.8 440.3
+                          L 71.7 444.9
+                          Z" />
+
+    <!-- Right joystick base -->
+    <path
+        android:fillColor="#111827"
+        android:pathData="M 347 469.4
+                          L 347 475.5
+                          L 451 475.5
+                          L 451 467.8
+                          L 447.9 464.8
+                          L 440.3 446.4
+                          L 434.2 440.3
+                          L 365.4 440.3
+                          L 359.2 444.9
+                          Z" />
+
+</vector>

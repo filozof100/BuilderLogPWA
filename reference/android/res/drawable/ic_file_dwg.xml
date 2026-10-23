@@ -1,0 +1,52 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="104dp"
+    android:height="96dp"
+    android:viewportWidth="104"
+    android:viewportHeight="96">
+
+    <!-- White document -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,10 L60,10 L80,30 L80,86 L24,86 Z" />
+
+    <!-- Red outline -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#D93636"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M24,10 L60,10 L80,30 L80,86 L24,86 Z" />
+
+    <!-- Fold -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#D93636"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M60,10 L60,30 L80,30" />
+
+    <!-- CAD badge -->
+    <path
+        android:fillColor="#D93636"
+        android:pathData="M40,38 L64,38 L64,70 L40,70 Z" />
+
+    <!-- Stylized white A -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M45,64 L52,45 L59,64 M48,57 L56,57" />
+
+    <!-- Small technical drawing lines -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#D93636"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:pathData="M68,46 L74,46 M68,53 L74,53" />
+
+</vector>

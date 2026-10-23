@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Main pole, beam, and base -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#111111"
+        android:strokeWidth="1.85"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M12,4.05
+                          V18.45
+                          M4.45,6.85
+                          H19.55
+                          M8.65,19.05
+                          H15.35" />
+
+    <!-- Left and right suspension lines -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#111111"
+        android:strokeWidth="1.65"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M6.45,6.85
+                          L4.10,11.65
+                          M6.45,6.85
+                          L8.80,11.65
+                          M17.55,6.85
+                          L15.20,11.65
+                          M17.55,6.85
+                          L19.90,11.65" />
+
+    <!-- Left pan -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#111111"
+        android:strokeWidth="1.65"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M3.85,11.65
+                          H9.05
+                          C8.80,13.80 7.85,14.90 6.45,14.90
+                          C5.05,14.90 4.10,13.80 3.85,11.65
+                          Z" />
+
+    <!-- Right pan -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#111111"
+        android:strokeWidth="1.65"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M14.95,11.65
+                          H20.15
+                          C19.90,13.80 18.95,14.90 17.55,14.90
+                          C16.15,14.90 15.20,13.80 14.95,11.65
+                          Z" />
+
+    <!-- Top knob -->
+    <path
+        android:fillColor="#111111"
+        android:pathData="M12,2.60
+                          C12.55,2.60 13.00,3.05 13.00,3.60
+                          C13.00,4.15 12.55,4.60 12.00,4.60
+                          C11.45,4.60 11.00,4.15 11.00,3.60
+                          C11.00,3.05 11.45,2.60 12.00,2.60
+                          Z" />
+
+</vector>

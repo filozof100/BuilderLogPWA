@@ -1,0 +1,173 @@
+/* Android dp map to CSS px at the default font/display scale.
+   Body Text inherits Android Typography.bodyLarge: 24px line height, .5px tracking. */
+.login-screen {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: linear-gradient(var(--radulovic-dark) 0 320px, #fff 320px);
+}
+
+.login-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 320px;
+  background: var(--radulovic-dark);
+}
+
+.login-hero-waves {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.login-wave-yellow { fill: var(--radulovic-yellow); }
+.login-wave-white { fill: #fff; }
+
+.login-brand {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 34px;
+}
+
+.login-logo {
+  display: block;
+  width: 88px;
+  height: 88px;
+}
+
+.login-brand h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 24px;
+  text-align: center;
+}
+
+.login-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px max(24px, env(safe-area-inset-right, 0px))
+    16px max(24px, env(safe-area-inset-left, 0px));
+  background: #fff;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.login-field label,
+.login-remember {
+  color: var(--radulovic-dark);
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 24px;
+}
+
+.login-input-row {
+  display: flex;
+  align-items: center;
+  height: 52px;
+  /* Compose border is drawn inside the layout; it does not consume padding. */
+  padding: 0 14px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px #d8d8d8;
+}
+
+.login-field-icon {
+  display: block;
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  margin-right: 14px;
+}
+
+.login-input-row input {
+  flex: 1 1 0%;
+  width: 0;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  color: #000;
+  -webkit-text-fill-color: #000;
+  font: 400 15px / 24px 'Roboto', sans-serif;
+  letter-spacing: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.login-input-row input::placeholder {
+  color: var(--radulovic-muted);
+  -webkit-text-fill-color: var(--radulovic-muted);
+  letter-spacing: .5px;
+  opacity: 1;
+}
+
+.login-password-visibility {
+  display: grid;
+  place-items: center;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  margin: 0 0 0 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.login-password-visibility img { display: block; }
+
+.login-remember {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  align-self: flex-start;
+}
+
+.login-checkbox {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--radulovic-border);
+  border-radius: 4px;
+  background: #fff;
+}
+
+.login-submit {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: var(--radulovic-yellow);
+  color: #000;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 24px;
+  letter-spacing: inherit;
+  cursor: default;
+}
+
+.login-submit:focus-visible,
+.login-password-visibility:focus-visible {
+  outline: 2px solid var(--radulovic-dark);
+  outline-offset: 3px;
+}

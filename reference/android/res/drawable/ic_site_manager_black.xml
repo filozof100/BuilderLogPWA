@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="1254"
+    android:viewportHeight="1254">
+
+    <!-- Hard hat -->
+    <path
+        android:fillColor="#111827"
+        android:pathData="M 410 415
+                          L 417 432
+                          L 837 432
+                          L 844 425
+                          L 842 407
+                          L 820 396
+                          L 811 343
+                          L 787 293
+                          L 753 255
+                          L 707 227
+                          L 699 336
+                          L 690 346
+                          L 676 339
+                          L 681 212
+                          L 676 200
+                          L 658 188
+                          L 597 188
+                          L 578 201
+                          L 573 213
+                          L 578 339
+                          L 572 345
+                          L 562 345
+                          L 555 335
+                          L 548 227
+                          L 510 248
+                          L 473 285
+                          L 444 341
+                          L 435 395
+                          L 415 404
+                          Z" />
+
+    <!-- Head and neck -->
+    <path
+        android:fillColor="#111827"
+        android:pathData="M 436 456
+                          L 442 494
+                          L 418 522
+                          L 419 569
+                          L 433 598
+                          L 466 618
+                          L 477 661
+                          L 500 700
+                          L 498 759
+                          L 757 760
+                          L 755 699
+                          L 789 618
+                          L 823 596
+                          L 836 568
+                          L 837 523
+                          L 812 493
+                          L 819 456
+                          L 774 457
+                          L 774 522
+                          L 801 514
+                          L 816 528
+                          L 809 578
+                          L 796 592
+                          L 773 597
+                          L 756 658
+                          L 717 709
+                          L 643 742
+                          L 572 731
+                          L 512 681
+                          L 483 599
+                          L 449 583
+                          L 437 549
+                          L 448 516
+                          L 481 521
+                          L 481 457
+                          Z" />
+
+    <!-- Jacket with transparent collar and tie -->
+    <path
+        android:fillColor="#111827"
+        android:fillType="evenOdd"
+        android:pathData="M 498 742
+                          L 389 780
+                          C 301 810 250 880 250 970
+                          L 250 1092
+                          L 1004 1092
+                          L 1004 970
+                          C 1004 880 953 810 865 780
+                          L 756 742
+                          C 728 774 687 792 627 792
+                          C 567 792 526 774 498 742
+                          Z
+
+                          M 492 758
+                          L 615 824
+                          L 566 878
+                          L 468 789
+                          Z
+
+                          M 762 758
+                          L 639 824
+                          L 688 878
+                          L 786 789
+                          Z
+
+                          M 610 838
+                          L 644 838
+                          L 664 870
+                          L 646 906
+                          L 663 1036
+                          L 627 1070
+                          L 591 1036
+                          L 608 906
+                          L 590 870
+                          Z" />
+
+</vector>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="1254"
+    android:viewportHeight="1254">
+
+    <!-- Truck slightly enlarged -->
+    <group
+        android:pivotX="627"
+        android:pivotY="627"
+        android:scaleX="1.06"
+        android:scaleY="1.06">
+
+        <!-- Cargo box -->
+        <path
+            android:fillColor="#111827"
+            android:pathData="M 520 355
+                              H 1027
+                              Q 1044 355 1044 372
+                              V 706
+                              Q 1044 723 1027 723
+                              H 520
+                              Q 503 723 503 706
+                              V 372
+                              Q 503 355 520 355
+                              Z" />
+
+        <!-- Cab and chassis, with window cutout -->
+        <path
+            android:fillColor="#111827"
+            android:fillType="evenOdd"
+            android:pathData="M 186 628
+                              V 806
+                              Q 186 826 206 826
+                              H 247
+                              C 253 793 268 766 289 748
+                              C 310 730 332 727 352 732
+                              C 389 739 427 773 442 826
+                              H 779
+                              C 786 792 804 763 826 747
+                              H 485
+                              L 462 475
+                              Q 461 460 445 460
+                              H 286
+                              Q 272 460 263 474
+                              L 194 595
+                              Q 186 609 186 628
+                              Z
+
+                              M 239 608
+                              L 303 504
+                              Q 308 498 319 498
+                              H 414
+                              Q 427 498 427 512
+                              V 604
+                              Q 427 617 414 620
+                              L 250 624
+                              Q 239 624 239 608
+                              Z" />
+
+        <!-- Rear bumper -->
+        <path
+            android:fillColor="#111827"
+            android:pathData="M 931 744
+                              H 1028
+                              Q 1049 744 1049 765
+                              V 806
+                              Q 1049 826 1029 826
+                              H 975
+                              C 972 795 958 767 931 744
+                              Z" />
+
+        <!-- Front wheel -->
+        <path
+            android:fillColor="#111827"
+            android:fillType="evenOdd"
+            android:pathData="M 270 832
+                              A 76 76 0 1 0 422 832
+                              A 76 76 0 1 0 270 832
+                              Z
+
+                              M 310 832
+                              A 36 36 0 1 1 382 832
+                              A 36 36 0 1 1 310 832
+                              Z" />
+
+        <!-- Rear wheel -->
+        <path
+            android:fillColor="#111827"
+            android:fillType="evenOdd"
+            android:pathData="M 802 832
+                              A 76 76 0 1 0 954 832
+                              A 76 76 0 1 0 802 832
+                              Z
+
+                              M 842 832
+                              A 36 36 0 1 1 914 832
+                              A 36 36 0 1 1 842 832
+                              Z" />
+
+    </group>
+
+</vector>

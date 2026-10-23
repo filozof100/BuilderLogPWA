@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Spinner -->
+    <group
+        android:pivotX="50"
+        android:pivotY="50">
+        <group
+            android:rotation="0"
+            android:pivotX="50"
+            android:pivotY="50">
+            <path
+                android:fillColor="#B9C2CD"
+                android:pathData="M46,11 C44.6,11 43.5,12.1 43.5,13.5 V21.5 C43.5,22.9 44.6,24 46,24 H54 C55.4,24 56.5,22.9 56.5,21.5 V13.5 C56.5,12.1 55.4,11 54,11 Z" />
+        </group>
+
+        <group
+            android:rotation="45"
+            android:pivotX="50"
+            android:pivotY="50">
+            <path
+                android:fillColor="#B9C2CD"
+                android:pathData="M46,11 C44.6,11 43.5,12.1 43.5,13.5 V21.5 C43.5,22.9 44.6,24 46,24 H54 C55.4,24 56.5,22.9 56.5,21.5 V13.5 C56.5,12.1 55.4,11 54,11 Z" />
+        </group>
+
+        <group
+            android:rotation="90"
+            android:pivotX="50"
+            android:pivotY="50">
+            <path
+                android:fillColor="#B9C2CD"
+                android:pathData="M46,11 C44.6,11 43.5,12.1 43.5,13.5 V21.5 C43.5,22.9 44.6,24 46,24 H54 C55.4,24 56.5,22.9 56.5,21.5 V13.5 C56.5,12.1 55.4,11 54,11 Z" />
+        </group>
+
+        <group
+            android:rotation="135"
+            android:pivotX="50"
+            android:pivotY="50">
+            <path
+                android:fillColor="#B9C2CD"
+                android:pathData="M46,11 C44.6,11 43.5,12.1 43.5,13.5 V21.5 C43.5,22.9 44.6,24 46,24 H54 C55.4,24 56.5,22.9 56.5,21.5 V13.5 C56.5,12.1 55.4,11 54,11 Z" />
+        </group>
+
+        <group
+            android:rotation="180"
+            android:pivotX="50"
+            android:pivotY="50">
+            <path
+                android:fillColor="#B9C2CD"
+                android:pathData="M46,11 C44.6,11 43.5,12.1 43.5,13.5 V21.5 C43.5,22.9 44.6,24 46,24 H54 C55.4,24 56.5,22.9 56.5,21.5 V13.5 C56.5,12.1 55.4,11 54,11 Z" />
+        </group>
+
+        <group
+            android:rotation="225"
+            android:pivotX="50"
+            android:pivotY="50">
+            <path
+                android:fillColor="#FFC928"
+                android:pathData="M46,11 C44.6,11 43.5,12.1 43.5,13.5 V21.5 C43.5,22.9 44.6,24 46,24 H54 C55.4,24 56.5,22.9 56.5,21.5 V13.5 C56.5,12.1 55.4,11 54,11 Z" />
+        </group>
+
+        <group
+            android:rotation="270"
+            android:pivotX="50"
+            android:pivotY="50">
+            <path
+                android:fillColor="#B9C2CD"
+                android:pathData="M46,11 C44.6,11 43.5,12.1 43.5,13.5 V21.5 C43.5,22.9 44.6,24 46,24 H54 C55.4,24 56.5,22.9 56.5,21.5 V13.5 C56.5,12.1 55.4,11 54,11 Z" />
+        </group>
+
+        <group
+            android:rotation="315"
+            android:pivotX="50"
+            android:pivotY="50">
+            <path
+                android:fillColor="#B9C2CD"
+                android:pathData="M46,11 C44.6,11 43.5,12.1 43.5,13.5 V21.5 C43.5,22.9 44.6,24 46,24 H54 C55.4,24 56.5,22.9 56.5,21.5 V13.5 C56.5,12.1 55.4,11 54,11 Z" />
+        </group>
+    </group>
+
+    <!-- Brim -->
+    <path
+        android:fillColor="#F4B400"
+        android:pathData="M30,52 C30,49.3 32.3,47 35,47 H65 C67.7,47 70,49.3 70,52 C70,54.7 67.7,57 65,57 H35 C32.3,57 30,54.7 30,52 Z" />
+
+    <!-- Left side detail -->
+    <path
+        android:fillColor="#E39B00"
+        android:pathData="M31,49.2 C34.2,49.4 36.7,50.3 39,52 L39,56 H35.3 C32.8,56 31,54.3 31,52 Z" />
+
+    <!-- Right side detail -->
+    <path
+        android:fillColor="#E39B00"
+        android:pathData="M69,49.2 C65.8,49.4 63.3,50.3 61,52 L61,56 H64.7 C67.2,56 69,54.3 69,52 Z" />
+
+    <!-- Dome -->
+    <path
+        android:fillColor="#FFC928"
+        android:pathData="M33,48 C34,37.8 41.2,31 50,31 C58.8,31 66,37.8 67,48 Z" />
+
+    <!-- Dome highlight -->
+    <path
+        android:fillColor="#FFE588"
+        android:fillAlpha="0.75"
+        android:pathData="M46,36 C52.5,34.8 58,38.4 60.5,43.5 C56.5,41.1 51.9,40.3 47.1,41.1 C43.1,41.8 39.8,43.9 37.8,46.9 C38.8,41.7 41.8,36.8 46,36 Z" />
+
+    <!-- Left ridge -->
+    <path
+        android:fillColor="#E39B00"
+        android:pathData="M42.8,33.5 C43.9,38.3 44.2,43.8 44.2,57 H42.3 C42.3,43.5 42.1,38.4 42.8,33.5 Z" />
+
+    <!-- Center ridge -->
+    <path
+        android:fillColor="#E39B00"
+        android:pathData="M50,32 C51.2,37.5 51.6,43.1 51.6,57 H49.7 C49.7,42.9 49.2,37.3 50,32 Z" />
+
+    <!-- Right ridge -->
+    <path
+        android:fillColor="#E39B00"
+        android:pathData="M57.2,33.5 C57.9,38.4 57.7,43.5 57.7,57 H55.8 C55.8,43.8 56.1,38.3 57.2,33.5 Z" />
+
+</vector>
