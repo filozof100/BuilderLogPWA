@@ -3,7 +3,7 @@ import './LoginActivity.css';
 
 // Visual port of Android LoginActivity.kt at cda0929.
 // Initial Android state: empty username, masked "password", remember-me unchecked.
-// Fields and password visibility are interactive; authentication remains inactive.
+// Local form controls are interactive; login and credential persistence are not connected.
 export default function LoginActivity() {
   return (
     <main className="login-screen" aria-labelledby="login-title">
@@ -79,6 +79,8 @@ function LoginInputField({ id, label, placeholder, icon, password = false }) {
           defaultValue={password ? 'password' : ''}
           placeholder={placeholder}
           autoComplete="off"
+          autoCapitalize="none"
+          autoCorrect="off"
           spellCheck="false"
         />
         {password && (
@@ -105,15 +107,31 @@ function LoginInputField({ id, label, placeholder, icon, password = false }) {
 
 function RememberMeRow() {
   return (
-    <div className="login-remember">
-      <span
-        className="login-checkbox"
-        role="checkbox"
-        aria-checked="false"
-        aria-disabled="true"
-        aria-labelledby="login-remember-label"
-      />
-      <span id="login-remember-label">Zapamti me</span>
-    </div>
+    <label className="login-remember">
+      <span className="login-checkbox-control">
+        <input
+          className="login-checkbox"
+          type="checkbox"
+          name="rememberMe"
+          defaultChecked={false}
+        />
+        <svg
+          className="login-checkbox-check"
+          viewBox="0 0 14 14"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="M1.4 7.7 L5.32 11.48 L12.6 2.52"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </span>
+      <span>Zapamti me</span>
+    </label>
   );
 }

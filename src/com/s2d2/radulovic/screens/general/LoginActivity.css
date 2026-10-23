@@ -136,15 +136,55 @@
   align-items: center;
   gap: 12px;
   align-self: flex-start;
+  cursor: pointer;
+  user-select: none;
 }
 
-.login-checkbox {
+.login-checkbox-control {
+  position: relative;
+  display: block;
   flex: 0 0 20px;
   width: 20px;
   height: 20px;
+}
+
+.login-checkbox {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0;
   border: 1px solid var(--radulovic-border);
   border-radius: 4px;
   background: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.login-checkbox:checked {
+  border-color: var(--radulovic-yellow);
+  background: var(--radulovic-yellow);
+}
+
+.login-checkbox-check {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  color: #000;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.login-checkbox:checked + .login-checkbox-check {
+  visibility: visible;
+}
+
+.login-checkbox:focus-visible,
+.login-input-row:focus-within {
+  outline: 2px solid var(--radulovic-dark);
+  outline-offset: 3px;
 }
 
 .login-submit {
