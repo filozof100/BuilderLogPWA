@@ -1,4 +1,5 @@
-import { AdminEditTaskButton, useAdminTaskEditor } from './AdminEditTaskActivity.jsx';
+import { AdminTaskRow } from './AdminTaskRow.jsx';
+import { useAdminTaskEditor } from './AdminEditTaskActivity.jsx';
 import useForegroundRefresh from '../../ui/components/useForegroundRefresh.js';
 import { showToast } from '../../ui/components/Toast.jsx';
 import Toast from '../../ui/components/Toast.jsx';
@@ -74,15 +75,6 @@ function TaskGroup({ title, tasks, loading, completed = false, onDelete, onOpen,
     <button type="button" className="admin-task-group-heading" aria-expanded={expanded} onClick={() => setExpanded(value => !value)}>
       <span><strong>{title}</strong><small>{loading ? 'Učitavanje zadataka...' : 'Broj zadataka: ' + tasks.length}</small></span><Icon name={expanded ? 'ic_chevron_down' : 'ic_chevron_right'}/>
     </button>
-    {expanded && !loading && (tasks.length ? tasks.map(task => {
-      const by = task.getManagerCompletedBy?.() || task.getCompletedBy?.();
-      return <article className="admin-task-row" key={task.getId()} role="button" tabIndex={0} onClick={() => onOpen(task)} onKeyDown={event => { if (event.target === event.currentTarget && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); onOpen(task); } }}>
-        <div><strong>{task.getTitle()}</strong>{task.getDescription()?.trim() && <p>{task.getDescription()}</p>}
-          <small>{task.isCompleted() ? 'Završen: ' + (task.getCompletedDate() || '-') : 'Zadato: ' + task.getDateCreated()}</small>
-          {task.isCompleted() && by && <b>Završio: {by.getFullName()}</b>}
-        </div>
-        <aside><strong>{task.isCompleted() ? 'Završen' : 'Aktivan'}</strong><div className="admin-task-row-actions"><AdminEditTaskButton onClick={() => onEdit(task)}/><button type="button" aria-label="Obriši zadatak" onClick={event => { event.stopPropagation(); onDelete(task); }}><Icon name="ic_costs_trash"/></button></div></aside>
-      </article>;
-    }) : <Notice>Nema zadataka.</Notice>)}
+    {expanded && !loading && (tasks.length ? tasks.map(task => <AdminTaskRow key={task.getId()} task={task} onOpen={onOpen} onEdit={onEdit} onDelete={onDelete}/>) : <Notice>Nema zadataka.</Notice>)}
   </div>;
 }

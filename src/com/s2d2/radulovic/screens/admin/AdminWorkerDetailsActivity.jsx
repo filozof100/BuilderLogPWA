@@ -1,5 +1,7 @@
 import LoadFailureToast from '../../LoadFailureToast.jsx';
-import { AdminEditTaskButton, useAdminTaskEditor } from './AdminEditTaskActivity.jsx';
+import { AdminTaskRow } from './AdminTaskRow.jsx';
+import { showToast } from '../../ui/components/Toast.jsx';
+import { useAdminTaskEditor } from './AdminEditTaskActivity.jsx';
 import { withRsd } from '../../utils/MoneyDisplay.js';
 import useForegroundRefresh from '../../ui/components/useForegroundRefresh.js';
 import { TaskDetails } from '../manager/TasksActivity.jsx';
@@ -9,7 +11,7 @@ import Role from '../../employee/Role.js';
 import TimeUtils from '../../utils/TimeUtils.js';
 import useBackLayer from '../../ui/components/useBackLayer.js';
 import Modal from '../../ui/components/Modal.jsx';
-import {Title,Icon,MaterialIcon,Notice,Value,Summary,DateRange,WorkerOwner,AdvanceDateRange,useLoad,roleIcons,roleLabels,today,monthStart,money,minutes,hours} from './AdminShared.jsx';
+import {Title,Icon,MaterialIcon,Notice,Value,Summary,DateRange,WorkerOwner,AdvanceDateRange,useLoad,mutate,roleIcons,roleLabels,today,monthStart,money,minutes,hours} from './AdminShared.jsx';
 import AdminEmployeeForm from './AdminEmployeeForm.jsx';
 import AdminWorkerPaymentsActivity from './AdminWorkerPaymentsActivity.jsx';
 import AdminManagerDetailsActivity from './AdminManagerDetailsActivity.jsx';
@@ -72,9 +74,42 @@ function WorkerAdvances({worker,rows,from,to,onBack}) {
 }
 export function dateKey(date) {return date?.slice(6,10)+date?.slice(3,5)+date?.slice(0,2);}
 export function WorkerTasks({worker,onBack}) {
-  const tasks=useLoad(cb=>Session.getAllTasksFromServerAdmin(worker,null,{onSuccess:(general,workerTasks)=>cb.onSuccess(workerTasks),onFailure:cb.onFailure}),[worker.getId()],[]);
+  const [removed,setRemoved]=useState([]);
+  const [removing,setRemoving]=useState(null);
+  const [busy,setBusy]=useState(false);
+  const deleting=useRef(false);
+  const tasks=useLoad(cb=>Session.getAllTasksFromServerAdmin(worker,null,{
+    onSuccess(general,workerTasks){setRemoved([]);cb.onSuccess(workerTasks);},onFailure:cb.onFailure,
+  }),[worker.getId()],[]);
   const { editing, editTask, editor } = useAdminTaskEditor(tasks.reload);
   useForegroundRefresh(tasks.reload, !editing);
   const [group,setGroup]=useState(null),[selected,setSelected]=useState(null);
-  return <>{editor}<section className="admin-screen admin-worker-tasks" style={editing ? { display: 'none' } : undefined}><Title title="ZADACI" subtitle="Pregled zadataka zaposlenog." icon="ic_tasks_black" onBack={onBack}/><WorkerOwner worker={worker} icon={worker.getRole()===Role.OPERATOR?'ic_excavator_black':undefined}/>{tasks.error?<LoadFailureToast message="Učitavanje zadataka nije uspelo."/>:[false,true].map(done=>{const list=tasks.data.filter(t=>t.isCompleted()===done);return <div className={'admin-task-group '+(done?'complete':'incomplete')} key={String(done)}><button className="admin-group" aria-expanded={group===done} onClick={()=>setGroup(group===done?null:done)}><div><strong>{done?'Završeni':'Nezavršeni'}</strong><small>{tasks.loading?'Učitavanje zadataka...':'Broj zadataka: '+list.length}</small></div><Icon name={group===done?'ic_chevron_down':'ic_chevron_right'}/></button>{group===done&&!tasks.loading&&(!list.length?<Notice>Nema zadataka.</Notice>:list.map(t=><article className="admin-finance-row" key={t.getId()} role="button" tabIndex={0} onClick={()=>setSelected(t)} onKeyDown={event=>{if(event.target===event.currentTarget&&(event.key==='Enter'||event.key===' ')){event.preventDefault();setSelected(t);}}}><div><strong>{t.getTitle()}</strong><small>{t.getDescription()}</small><small className="admin-task-date">{done?'Završen: '+t.getCompletedDate():'Zadato: '+t.getDateCreated()}</small>{done&&<small className="admin-task-completed">Završio: {t.getCompletedBy()?.getFullName()||'-'}</small>}</div><AdminEditTaskButton onClick={()=>editTask(t, 'Za: '+worker.getFullName())}/><span>{done?'Završen':'Aktivan'}</span></article>))}</div>;})}{selected && <TaskDetails task={{ name: selected.getTitle(), description: selected.getDescription(), assignedAt: selected.getDateCreated() }} onClose={() => setSelected(null)}/>}</section></>;
+  function remove() {
+    if(deleting.current)return;
+    deleting.current=true;setBusy(true);
+    const taskId=removing.getId();
+    mutate('DELETE','tasks/'+taskId,{reason:'Admin obrisao'},{
+      onSuccess(){setRemoved(ids=>[...ids,taskId]);deleting.current=false;setBusy(false);setRemoving(null);showToast('Zadatak je obrisan');},
+      onFailure(){deleting.current=false;setBusy(false);showToast('Brisanje zadatka nije uspelo');},
+    });
+  }
+  return <>{editor}<section className="admin-screen admin-worker-tasks" style={editing ? { display: 'none' } : undefined}>
+    <Title title="ZADACI" subtitle="Pregled zadataka zaposlenog." icon="ic_tasks_black" onBack={onBack}/>
+    <WorkerOwner worker={worker} icon={worker.getRole()===Role.OPERATOR?'ic_excavator_black':undefined}/>
+    {tasks.error?<LoadFailureToast message="Učitavanje zadataka nije uspelo."/>:[false,true].map(done=>{
+      const list=tasks.data.filter(t=>t.isCompleted()===done&&!removed.includes(t.getId()));
+      return <div className={'admin-task-group '+(done?'complete completed':'incomplete')} key={String(done)}>
+        <button type="button" className="admin-group" aria-expanded={group===done} onClick={()=>setGroup(group===done?null:done)}>
+          <div><strong>{done?'Završeni':'Nezavršeni'}</strong><small>{tasks.loading?'Učitavanje zadataka...':'Broj zadataka: '+list.length}</small></div>
+          <Icon name={group===done?'ic_chevron_down':'ic_chevron_right'}/>
+        </button>
+        {group===done&&!tasks.loading&&(!list.length?<Notice>Nema zadataka.</Notice>:list.map(task=><AdminTaskRow key={task.getId()} task={task} onOpen={setSelected} onEdit={task=>editTask(task,'Za: '+worker.getFullName())} onDelete={setRemoving}/>))}
+      </div>;
+    })}
+    {selected && <TaskDetails task={{ name: selected.getTitle(), description: selected.getDescription(), assignedAt: selected.getDateCreated() }} onClose={() => setSelected(null)}/>}
+    {removing && <Modal className="admin-task-delete" title="Obriši zadatak?" busy={busy} onClose={()=>setRemoving(null)} actions={<>
+      <button type="button" disabled={busy} onClick={()=>setRemoving(null)}>Otkaži</button>
+      <button type="button" className="admin-task-delete-confirm" disabled={busy} onClick={remove}>{busy?'Brisanje...':'Obriši'}</button>
+    </>}><p>Da li ste sigurni da želite da obrišete zadatak {removing.getTitle()}?</p></Modal>}
+  </section></>;
 }

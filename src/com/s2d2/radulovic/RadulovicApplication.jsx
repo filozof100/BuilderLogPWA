@@ -11,6 +11,7 @@ import TruckDriverActivity from './screens/truck_driver/TruckDriverActivity.jsx'
 import ExcavatorDriverActivity from './screens/excavator_driver/ExcavatorDriverActivity.jsx';
 import SettingsAccessBar from './ui/components/SettingsAccessBar.jsx';
 import Session from './network/Session.js';
+import { onAuthenticationFailure } from './network/WebUtils.js';
 import SessionGuard from './SessionGuard.jsx';
 import getSharedPreferences from './utils/SharedPreferences.js';
 import Role from './employee/Role.js';
@@ -81,13 +82,20 @@ export default function RadulovicApplication() {
     else { showToast('Nepoznata korisnička uloga'); setScreen({ name: 'unsupported', role }); }
   }
 
-  function requireLogin() {
+  function requireLogin(allowAutomaticLogin = true, error = '') {
     setSettingsOpen(false);
     requestVersion.current++;
     Session.clearSession();
     getSharedPreferences('com.s2d2.radulovic.LOGIN_PREFERENCES').edit().remove('user_role').apply();
-    setScreen({ name: 'login' });
+    setScreen({ name: 'login', allowAutomaticLogin, error });
   }
+
+  useEffect(() => onAuthenticationFailure(authorization => {
+    // A delayed response from an old session must not log out a newer login.
+    if (authorization !== Session.getSessionToken()) return;
+    // Do not repeatedly auto-login if the server rejects authenticated requests.
+    requireLogin(false, 'Sesija je istekla. Prijavite se ponovo.');
+  }), []);
 
   useEffect(() => () => { requestVersion.current++; }, []);
 

@@ -1,5 +1,17 @@
 import NetworkLoadingState from '../NetworkLoadingState.js';
 
+const authenticationFailureListeners = new Set();
+export function onAuthenticationFailure(listener) {
+  authenticationFailureListeners.add(listener);
+  return () => authenticationFailureListeners.delete(listener);
+}
+
+function reportAuthenticationFailure(request, status) {
+  const authorization = request.headers.get('Authorization');
+  if (status !== 401 || !authorization || !request.url.startsWith(WebUtils.BASE_URL)) return;
+  for (const listener of authenticationFailureListeners) listener(authorization);
+}
+
 // Port of Android WebUtils.java at cda0929. Method groups follow the Java order.
 // Java overloads share a dispatcher; callbacks remain the public result contract.
 // Returned promises settle after callbacks and loading bookkeeping complete.
@@ -163,6 +175,7 @@ export default class WebUtils {
         const response = await WebUtils.#CLIENT(request);
 
         if (!response.ok) {
+          reportAuthenticationFailure(requestBuilder, response.status);
           const errorBody = response.body === null ? '' : await response.text();
           throw new WebUtils.HttpException(response.status, errorBody);
         }
@@ -219,6 +232,7 @@ export default class WebUtils {
       }
 
       if (!response.ok) {
+        reportAuthenticationFailure(request, response.status);
         console.error('AdminEditMachine', 'HTTP ' + response.status);
         callback.onFailure(new WebUtils.HttpException(response.status, body));
         return;
