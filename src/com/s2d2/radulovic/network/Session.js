@@ -1174,7 +1174,7 @@ export default class Session {
   }
 
   static getAllTasksFromServer(callback) {
-    const endpoint = 'my/tasks' + '?sort=date&direction=desc';
+    const endpoint = 'my/tasks' + '?sort=created_at&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
 
@@ -1261,7 +1261,7 @@ export default class Session {
   }
 
   static getAllTasksFromServerAdmin(worker, constructionSite, callback) {
-    const endpoint = 'tasks' + '?sort=date&direction=desc';
+    const endpoint = 'tasks' + '?sort=created_at&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
 
@@ -1334,7 +1334,7 @@ export default class Session {
   }
 
   static getConstructionSiteTasksFromServerAdmin(constructionSiteId, callback) {
-    const endpoint = 'tasks?construction_site_id=' + constructionSiteId + '&sort=date&direction=desc';
+    const endpoint = 'tasks?construction_site_id=' + constructionSiteId + '&sort=created_at&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
 
