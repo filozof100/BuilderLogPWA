@@ -499,7 +499,7 @@ export default class Session {
   }
 
   static getWorkerAttendancesAdmin(workerId, dateFrom, dateTo, callback) {
-    const endpoint = 'worker-attendances?worker_id=' + workerId + '&date_from=' + dateFrom + '&date_to=' + dateTo;
+    const endpoint = 'worker-attendances?worker_id=' + workerId + '&date_from=' + dateFrom + '&date_to=' + dateTo + '&sort=date&direction=desc';
 
     WebUtils.sendGETRequest(
       endpoint,
@@ -689,7 +689,7 @@ export default class Session {
   }
 
   static getWorkerPayments(dateFrom, dateTo, workerId, callback) {
-    const endpoint = 'worker-payments?worker_id=' + workerId + '&date_from=' + dateFrom + '&date_to=' + dateTo;
+    const endpoint = 'worker-payments?worker_id=' + workerId + '&date_from=' + dateFrom + '&date_to=' + dateTo + '&sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
         try {
@@ -1038,7 +1038,7 @@ export default class Session {
   }
 
   static getAllNotesFromServer(dailyLog, callback) {
-    const endpoint = 'daily-logs/' + dailyLog.getDailyLogId() + '/notes';
+    const endpoint = 'daily-logs/' + dailyLog.getDailyLogId() + '/notes' + '?sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
         try {
@@ -1073,7 +1073,7 @@ export default class Session {
   }
 
   static getAllNotesForAdminFromServer(dateFrom, dateTo, constructionSite, callback) {
-    let endpoint = 'notes?date_created_from=' + dateFrom + '&date_created_to=' + dateTo;
+    let endpoint = 'notes?date_created_from=' + dateFrom + '&date_created_to=' + dateTo + '&sort=date&direction=desc';
     if (constructionSite != null) endpoint += '&construction_site_id=' + constructionSite.getId();
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
@@ -1174,7 +1174,7 @@ export default class Session {
   }
 
   static getAllTasksFromServer(callback) {
-    const endpoint = 'my/tasks';
+    const endpoint = 'my/tasks' + '?sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
 
@@ -1261,7 +1261,7 @@ export default class Session {
   }
 
   static getAllTasksFromServerAdmin(worker, constructionSite, callback) {
-    const endpoint = 'tasks';
+    const endpoint = 'tasks' + '?sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
 
@@ -1334,7 +1334,7 @@ export default class Session {
   }
 
   static getConstructionSiteTasksFromServerAdmin(constructionSiteId, callback) {
-    const endpoint = 'tasks?construction_site_id=' + constructionSiteId;
+    const endpoint = 'tasks?construction_site_id=' + constructionSiteId + '&sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
 
@@ -1757,7 +1757,7 @@ export default class Session {
   }
 
   static getExcavatorDriverLogsAdmin(operatorId, dateFrom, dateTo, callback) {
-    const endpoint = 'workers/' + operatorId + '/work-history?date_from=' + dateFrom + '&date_to=' + dateTo;
+    const endpoint = 'workers/' + operatorId + '/work-history?date_from=' + dateFrom + '&date_to=' + dateTo + '&sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
         try {
@@ -1793,7 +1793,7 @@ export default class Session {
   }
 
   static getExcavatorLogsAdmin(truckId, dateFrom, dateTo, callback) {
-    const endpoint = 'machine-assignments?machine_type=excavator&machine_id=' + truckId + '&date_from=' + dateFrom + '&date_to=' + dateTo;
+    const endpoint = 'machine-assignments?machine_type=excavator&machine_id=' + truckId + '&date_from=' + dateFrom + '&date_to=' + dateTo + '&sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
         try {
@@ -1833,7 +1833,7 @@ export default class Session {
   }
 
   static getTruckLogsAdmin(truckId, dateFrom, dateTo, callback) {
-    const endpoint = 'machine-assignments?machine_type=truck&machine_id=' + truckId + '&date_from=' + dateFrom + '&date_to=' + dateTo;
+    const endpoint = 'machine-assignments?machine_type=truck&machine_id=' + truckId + '&date_from=' + dateFrom + '&date_to=' + dateTo + '&sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
         try {
@@ -1963,7 +1963,7 @@ export default class Session {
   }
 
   static getTruckDriverLogsAdmin(driverId, dateFrom, dateTo, callback) {
-    const endpoint = 'workers/' + driverId + '/work-history?date_from=' + dateFrom + '&date_to=' + dateTo;
+    const endpoint = 'workers/' + driverId + '/work-history?date_from=' + dateFrom + '&date_to=' + dateTo + '&sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
         try {
@@ -1998,7 +1998,7 @@ export default class Session {
   }
 
   static getManagerDetailsAdmin(managerId, dateFrom, dateTo, callback) {
-    const endpoint = 'site-managers/' + managerId + '/overall?date_created_from=' + dateFrom + '&date_created_to=' + dateTo;
+    const endpoint = 'site-managers/' + managerId + '/overall?date_created_from=' + dateFrom + '&date_created_to=' + dateTo + '&sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
         try {
@@ -2121,7 +2121,7 @@ export default class Session {
   }
 
   static getManagerExpensesForConstructionSite(dailyLog, callback) {
-    const endpoint = 'daily-logs/' + dailyLog.getDailyLogId() + '/expenses/history';
+    const endpoint = 'daily-logs/' + dailyLog.getDailyLogId() + '/expenses/history' + '?sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
         try {
@@ -2166,7 +2166,7 @@ export default class Session {
   }
 
   static getAdvancesForManager(managerId, dateFrom, dateTo, callback) {
-    const endpoint = 'cash-advances?site_manager_id=' + managerId + '&date_from=' + dateFrom + '&date_to=' + dateTo;
+    const endpoint = 'cash-advances?site_manager_id=' + managerId + '&date_from=' + dateFrom + '&date_to=' + dateTo + '&sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
         try {
@@ -2195,7 +2195,7 @@ export default class Session {
   }
 
   static getExpensesForManager(managerId, dateFrom, dateTo, callback) {
-    const endpoint = 'expenses?site_manager_id=' + managerId + '&date_from=' + dateFrom + '&date_to=' + dateTo;
+    const endpoint = 'expenses?site_manager_id=' + managerId + '&date_from=' + dateFrom + '&date_to=' + dateTo + '&sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
         try {
@@ -2230,7 +2230,7 @@ export default class Session {
   }
 
   static getExpensesForConstructionSite(constructionSiteId, dateFrom, dateTo, callback) {
-    const endpoint = 'construction-sites/' + constructionSiteId + '/financial-summary?date_from=' + dateFrom + '&date_to=' + dateTo;
+    const endpoint = 'construction-sites/' + constructionSiteId + '/financial-summary?date_from=' + dateFrom + '&date_to=' + dateTo + '&sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
         try {
@@ -2318,7 +2318,7 @@ export default class Session {
   }
 
   static getAdminExpensesFromServer(dateFrom, dateTo, callback) {
-    const endpoint = 'admin/expenses?date_from=' + dateFrom + '&date_to=' + dateTo;
+    const endpoint = 'admin/expenses?date_from=' + dateFrom + '&date_to=' + dateTo + '&sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
         try {
@@ -2377,7 +2377,7 @@ export default class Session {
   }
 
   static getDeliveryNotesForDailyLog(dailylog, callback) {
-    const endpoint = 'daily-logs/' + dailylog.getDailyLogId() + '/delivery-notes';
+    const endpoint = 'daily-logs/' + dailylog.getDailyLogId() + '/delivery-notes' + '?sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
         try {
@@ -2416,7 +2416,7 @@ export default class Session {
   }
 
   static getDeliveryNotesAdmin(constructionSite, dateFrom, dateTo, callback) {
-    let endpoint = 'delivery-notes?date_from=' + dateFrom + '&date_to=' + dateTo;
+    let endpoint = 'delivery-notes?date_from=' + dateFrom + '&date_to=' + dateTo + '&sort=date&direction=desc';
     if (constructionSite != null) endpoint += '&construction_site_id=' + constructionSite.getId();
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
@@ -2518,7 +2518,7 @@ export default class Session {
   static getAllDocumentsFromServer(constructionSiteOrId, callback) {
     const constructionSiteId = typeof constructionSiteOrId === 'number'
       ? constructionSiteOrId : constructionSiteOrId.getId();
-    const endpoint = 'documents?construction_site_id=' + constructionSiteId;
+    const endpoint = 'documents?construction_site_id=' + constructionSiteId + '&sort=date&direction=desc';
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.#sessionToken }, {
       onSuccess(responseBody) {
 

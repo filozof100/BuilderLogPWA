@@ -1,3 +1,4 @@
+import { dateSortTimestamp } from '../../utils/DateSorting.js';
 import { showToast } from '../../ui/components/Toast.jsx';
 import Toast from '../../ui/components/Toast.jsx';
 import React, { useMemo, useRef, useState } from 'react';
@@ -25,7 +26,7 @@ export default function AdminAssignAdvanceToManagerActivity({ worker = null, ini
   const managers = useLoad(cb => Session.getAllManagersFromServer(cb), [], []);
   const options = useMemo(() => managers.data.map(worker => ({ worker, getName: () => worker.getFullName() })), [managers.data]);
   const advances = useLoad(cb => manager ? Session.getAdvancesForManager(manager.getId(), from, to, cb) : cb.onSuccess([]), [manager, from, to], []);
-  const rows = advances.loading ? [] : [...advances.data].sort((a, b) => b.getDate().localeCompare(a.getDate()));
+  const rows = advances.loading ? [] : [...advances.data].sort((a, b) => dateSortTimestamp(b.getDate()) - dateSortTimestamp(a.getDate()));
   useBackLayer(!!editor, () => setEditor(null), busy);
   function request(method, path, body) {
     if (lock.current) return;

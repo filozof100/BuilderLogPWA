@@ -388,7 +388,7 @@ export default class DailyLogUtils {
   }
 
   static getAdminSubcontractorAttendancesFromServer(subcontractorId, dateFrom, dateTo, callback) {
-    const endpoint = 'subcontractor-logs?subcontractor_id=' + subcontractorId + '&start_date=' + dateFrom + '&end_date=' + dateTo;
+    const endpoint = 'subcontractor-logs?subcontractor_id=' + subcontractorId + '&start_date=' + dateFrom + '&end_date=' + dateTo + '&sort=date&direction=desc';
 
     WebUtils.sendGETRequest(endpoint, {}, { Authorization: Session.getSessionToken() }, {
       onSuccess(responseBody) {

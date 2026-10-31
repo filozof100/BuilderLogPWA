@@ -1,3 +1,4 @@
+import { dateSortTimestamp } from '../../utils/DateSorting.js';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Session from '../../network/Session.js';
 import SelectionDropdown from '../../ui/components/SelectionDropdown.jsx';
@@ -66,7 +67,7 @@ function AdvancesDropdown({ advances, loading }) {
     document.addEventListener('pointerdown', outside);
     return () => document.removeEventListener('pointerdown', outside);
   }, [open]);
-  const sorted = [...advances].sort((a, b) => b.getDate().localeCompare(a.getDate()));
+  const sorted = [...advances].sort((a, b) => dateSortTimestamp(b.getDate()) - dateSortTimestamp(a.getDate()));
   return <div className="manager-advances-dropdown" ref={root}>
     <button ref={trigger} type="button" aria-expanded={open} aria-haspopup="dialog" onClick={() => setOpen(value => !value)}>Zaduženja<Icon name={open ? 'ic_chevron_down' : 'ic_chevron_right'}/></button>
     {open && <div ref={popup} tabIndex={-1} role="dialog" aria-label="Zaduženja" className={'manager-advances-popup' + (above ? ' above' : '')} onKeyDown={event => { if(event.key === 'Escape') { event.preventDefault(); setOpen(false); trigger.current.focus(); } }}>

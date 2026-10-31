@@ -1,3 +1,4 @@
+import { dateSortTimestamp } from '../../utils/DateSorting.js';
 import useBackLayer from '../../ui/components/useBackLayer.js';
 import React, { useEffect, useRef, useState } from 'react';
 import Session from '../../network/Session.js';
@@ -9,10 +10,6 @@ import './DeliveryNotesActivity.css';
 import './TasksActivity.css';
 
 const groups = [['general', 'Opšti zadaci'], ['site', 'Zadaci za gradilište'], ['manager', 'Zadaci za šefa']];
-function dateOrder(value) {
-  const match = /^(\d{2})\.(\d{2})\.(\d{4})\./.exec(value);
-  return match ? Number(match[3] + match[2] + match[1]) : Infinity;
-}
 export default function TasksActivity({ onBack }) {
   const [site, setSite] = useState(() => Session.getDefaultConstructionSite());
   const [sites, setSites] = useState([]), [tasks, setTasks] = useState([]);
@@ -38,7 +35,7 @@ export default function TasksActivity({ onBack }) {
           assignedAt: task.getDateCreated(), completedAt: task.getCompletedDate(), done: task.isCompleted(), visited: task.isNotificationVisited(),
           completedBy: (type === 'general' ? task.getManagerCompletedBy() : task.getCompletedBy())?.getFullName() || '',
           siteId: type === 'site' ? task.getConstructionSiteId() : null }));
-        setTasks([...convert(general, 'general'), ...convert(manager, 'manager'), ...convert(construction, 'site')].sort((a, b) => dateOrder(a.assignedAt) - dateOrder(b.assignedAt)));
+        setTasks([...convert(general, 'general'), ...convert(manager, 'manager'), ...convert(construction, 'site')].sort((a, b) => dateSortTimestamp(b.assignedAt, Infinity, true) - dateSortTimestamp(a.assignedAt, Infinity, true)));
         setLoading(false);
       },
       onFailure() { if (generation.current === current) { setLoading(false); setError('Učitavanje zadataka nije uspelo.'); } },
