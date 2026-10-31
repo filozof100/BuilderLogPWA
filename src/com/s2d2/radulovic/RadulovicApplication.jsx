@@ -11,7 +11,8 @@ import TruckDriverActivity from './screens/truck_driver/TruckDriverActivity.jsx'
 import ExcavatorDriverActivity from './screens/excavator_driver/ExcavatorDriverActivity.jsx';
 import SettingsAccessBar from './ui/components/SettingsAccessBar.jsx';
 import Session from './network/Session.js';
-import { onAuthenticationFailure } from './network/WebUtils.js';
+import WebUtils, { onAuthenticationFailure } from './network/WebUtils.js';
+import useForegroundRefresh from './ui/components/useForegroundRefresh.js';
 import SessionGuard from './SessionGuard.jsx';
 import getSharedPreferences from './utils/SharedPreferences.js';
 import Role from './employee/Role.js';
@@ -96,6 +97,19 @@ export default function RadulovicApplication() {
     // Do not repeatedly auto-login if the server rejects authenticated requests.
     requireLogin(false, 'Sesija je istekla. Prijavite se ponovo.');
   }), []);
+
+  const sessionCheckPending = useRef(false);
+  useForegroundRefresh(() => {
+    const token = Session.getSessionToken();
+    if (sessionCheckPending.current || !token || !Session.getCurrentUser()) return;
+    sessionCheckPending.current = true;
+    // Validate the live session only; never restore a user or token from storage.
+    // Authenticated 401 responses are handled by the shared listener above.
+    WebUtils.sendGETRequest('me', {}, { Authorization: token }, {
+      onSuccess() { sessionCheckPending.current = false; },
+      onFailure() { sessionCheckPending.current = false; },
+    });
+  }, screen.name !== 'login' && screen.name !== 'loading');
 
   useEffect(() => () => { requestVersion.current++; }, []);
 

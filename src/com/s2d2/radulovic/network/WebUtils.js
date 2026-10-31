@@ -205,6 +205,10 @@ export default class WebUtils {
     for (const [key, value] of entries) {
       requestBuilder.headers.append(key, value);
     }
+    // Laravel otherwise tries to redirect expired sessions to a missing login route.
+    if (requestBuilder.url.startsWith(WebUtils.BASE_URL) && !requestBuilder.headers.has('Accept')) {
+      requestBuilder.headers.set('Accept', 'application/json');
+    }
   }
 
   static async #executeRequest(request, callback) {
