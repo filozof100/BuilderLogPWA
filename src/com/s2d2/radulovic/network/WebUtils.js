@@ -6,10 +6,18 @@ export function onAuthenticationFailure(listener) {
   return () => authenticationFailureListeners.delete(listener);
 }
 
-function reportAuthenticationFailure(request, status) {
+const authenticatedSuccessListeners = new Set();
+export function onAuthenticatedRequestSuccess(listener) {
+  authenticatedSuccessListeners.add(listener);
+  return () => authenticatedSuccessListeners.delete(listener);
+}
+
+function reportAuthenticationResult(request, status) {
   const authorization = request.headers.get('Authorization');
-  if (status !== 401 || !authorization || !request.url.startsWith(WebUtils.BASE_URL)) return;
-  for (const listener of authenticationFailureListeners) listener(authorization);
+  if (!authorization || !request.url.startsWith(WebUtils.BASE_URL)) return;
+  const listeners = status === 401 ? authenticationFailureListeners
+    : status >= 200 && status < 300 ? authenticatedSuccessListeners : [];
+  for (const listener of listeners) listener(authorization);
 }
 
 // Port of Android WebUtils.java at cda0929. Method groups follow the Java order.
@@ -174,8 +182,8 @@ export default class WebUtils {
         const request = new Request(url, { ...options, credentials: 'omit' });
         const response = await WebUtils.#CLIENT(request);
 
+        reportAuthenticationResult(requestBuilder, response.status);
         if (!response.ok) {
-          reportAuthenticationFailure(requestBuilder, response.status);
           const errorBody = response.body === null ? '' : await response.text();
           throw new WebUtils.HttpException(response.status, errorBody);
         }
@@ -235,8 +243,8 @@ export default class WebUtils {
         return;
       }
 
+      reportAuthenticationResult(request, response.status);
       if (!response.ok) {
-        reportAuthenticationFailure(request, response.status);
         console.error('AdminEditMachine', 'HTTP ' + response.status);
         callback.onFailure(new WebUtils.HttpException(response.status, body));
         return;

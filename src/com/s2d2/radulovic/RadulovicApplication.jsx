@@ -11,7 +11,7 @@ import TruckDriverActivity from './screens/truck_driver/TruckDriverActivity.jsx'
 import ExcavatorDriverActivity from './screens/excavator_driver/ExcavatorDriverActivity.jsx';
 import SettingsAccessBar from './ui/components/SettingsAccessBar.jsx';
 import Session from './network/Session.js';
-import WebUtils, { onAuthenticationFailure } from './network/WebUtils.js';
+import WebUtils, { onAuthenticationFailure, onAuthenticatedRequestSuccess } from './network/WebUtils.js';
 import useForegroundRefresh from './ui/components/useForegroundRefresh.js';
 import SessionGuard from './SessionGuard.jsx';
 import getSharedPreferences from './utils/SharedPreferences.js';
@@ -36,6 +36,7 @@ export default function RadulovicApplication() {
     setNotice(message);
   }
   const requestVersion = useRef(0);
+  const automaticRecoveryAttempted = useRef(false);
   const requests = useSyncExternalStore(
     NetworkLoadingState.activeRequests.subscribe,
     () => NetworkLoadingState.activeRequests.value,
@@ -91,12 +92,22 @@ export default function RadulovicApplication() {
     setScreen({ name: 'login', allowAutomaticLogin, error });
   }
 
-  useEffect(() => onAuthenticationFailure(authorization => {
-    // A delayed response from an old session must not log out a newer login.
-    if (authorization !== Session.getSessionToken()) return;
-    // Do not repeatedly auto-login if the server rejects authenticated requests.
-    requireLogin(false, 'Sesija je istekla. Prijavite se ponovo.');
-  }), []);
+  useEffect(() => {
+    const stopFailure = onAuthenticationFailure(authorization => {
+      // A delayed response from an old session must not log out a newer login.
+      if (authorization !== Session.getSessionToken()) return;
+      const remember = getSharedPreferences('com.s2d2.radulovic.LOGIN_PREFERENCES')
+        .getBoolean('remember_me', false);
+      const automatic = remember && !automaticRecoveryAttempted.current;
+      if (automatic) automaticRecoveryAttempted.current = true;
+      requireLogin(automatic, automatic ? '' : 'Sesija je istekla. Prijavite se ponovo.');
+    });
+    const stopSuccess = onAuthenticatedRequestSuccess(authorization => {
+      // Allow later recovery once the server has accepted the new session.
+      if (authorization === Session.getSessionToken()) automaticRecoveryAttempted.current = false;
+    });
+    return () => { stopFailure(); stopSuccess(); };
+  }, []);
 
   const sessionCheckPending = useRef(false);
   useForegroundRefresh(() => {
