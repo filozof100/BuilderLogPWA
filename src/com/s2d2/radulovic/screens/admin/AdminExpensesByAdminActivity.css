@@ -1,0 +1,15 @@
+.admin-expenses-by-admin {padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));gap:14px;}
+.admin-expenses-by-admin>.admin-title>span img {width:36px;height:36px;}
+.admin-expenses-total {height:104px;flex-shrink:0;display:flex;align-items:center;padding:14px;border-radius:8px;background:#fff8e8;color:#b77a00;}
+.admin-expenses-total>div {flex:1;min-width:0;display:flex;flex-direction:column;gap:8px;}
+.admin-expenses-total strong {font:900 11px/24px Roboto;}
+.admin-expenses-total b {font:900 22px/24px Roboto;overflow-wrap:anywhere;}
+.admin-expenses-total i {display:block;width:34px;height:34px;flex-shrink:0;background:currentColor;mask:url('/assets/drawable/ic_wallet_black.svg') center/contain no-repeat;}
+.admin-expenses-by-admin>.admin-notice {height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgb(255 196 0 / 12%);font:700 13px/24px Roboto;}
+.admin-own-expense {width:100%;padding:12px;display:flex;flex-direction:column;gap:6px;border:0;outline:1px solid #e8e8e8;outline-offset:-1px;border-radius:8px;background:white;text-align:left;color:black;}
+.admin-own-expense>div {width:100%;display:flex;align-items:flex-start;gap:10px;font:900 14px/24px Roboto;}
+.admin-own-expense strong {flex:1;min-width:0;overflow-wrap:anywhere;}
+.admin-own-expense b {color:#168a35;}
+.admin-own-expense p {margin:0;color:#07131b;font:400 11px/24px Roboto;overflow-wrap:anywhere;}
+.admin-own-expense small {color:#777;font:700 10px/24px Roboto;}
+.admin-own-expense>span {color:#07131b;font:700 11px/24px Roboto;}

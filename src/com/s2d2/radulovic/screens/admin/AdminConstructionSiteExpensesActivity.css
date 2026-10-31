@@ -1,0 +1,64 @@
+.admin-site-expenses {padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));gap:14px;}
+.admin-site-expenses>.admin-title>span img {width:34px;height:34px;}
+.admin-site-expenses>.admin-title p {line-height:12px;}
+.admin-site-expenses>.admin-delivery-sites {padding:9px;}
+.site-expense-period {padding:11px;background:white;border-radius:8px;box-shadow:0 2px 4px #0003;display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.site-expense-period .admin-date {gap:6px;min-width:0;}
+.site-expense-period .admin-date>span {font:700 12px/24px Roboto;color:#777;}
+.site-expense-period .admin-date button {height:48px;min-height:48px;padding:0 10px;gap:6px;border:0;box-shadow:inset 0 0 0 1px #e8e8e8;border-radius:8px;background:white;font:900 13px/24px Roboto;white-space:nowrap;color:black;}
+.site-expense-period .admin-date img {width:17px;height:17px;flex-shrink:0;}
+.site-expense-summary {display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.tone-0 {color:#168a35;}.tone-1 {color:#1973c9;}.tone-2 {color:#c74455;}.tone-3 {color:#b77a00;}
+.site-expense-tone {height:104px;padding:8px;border-radius:8px;display:flex;flex-direction:column;justify-content:space-between;min-width:0;}
+.site-expense-tone.tone-0 {background:#f2fbf3;}.site-expense-tone.tone-1 {background:#f1f7ff;}.site-expense-tone.tone-2 {background:#fff0f2;}.site-expense-tone.tone-3 {background:#fff8e8;}
+.site-expense-tone>div {display:flex;align-items:flex-start;}
+.site-expense-tone strong {flex:1;white-space:pre-line;font:900 10px/14px Roboto;}
+.site-expense-tone i {display:block;flex-shrink:0;background:currentColor;mask-repeat:no-repeat;mask-position:center;mask-size:contain;}
+.site-expense-tone b {display:block;font:900 18px/20px Roboto;white-space:nowrap;}
+.site-expense-tone small {display:block;font:700 10px/24px Roboto;}
+.site-expense-tabs {display:flex;}
+.site-expense-tabs>button {flex:1;padding:12px 4px;border:0;border-bottom:3px solid #e8e8e8;background:white;color:#777;white-space:pre-line;text-align:center;font:900 11px/14px Roboto;}
+.site-expense-tabs>button[aria-selected=true] {color:black;border-color:#ffc400;}
+.admin-site-expenses>.admin-notice {min-height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;font:700 13px/24px Roboto;}
+.admin-site-expenses>.admin-notice:has(.site-salary-notice) {border-color:#16823c;background:rgb(22 130 60 / 12%);}
+.admin-site-expenses>.admin-notice:has(.site-manager-notice) {border-color:#1976d2;background:rgb(25 118 210 / 12%);}
+.site-salary-table {border-radius:8px;overflow:hidden;outline:1px solid #e8e8e8;outline-offset:-1px;box-shadow:0 1px 2px #0002;}
+.site-salary-table>header,.site-salary-table>button {display:flex;align-items:center;width:100%;height:50px;padding:0 12px;gap:0;border:0;background:white;text-align:left;}
+.site-salary-table>header {height:40px;background:#f7f7f7;color:#777;font:700 11px/24px Roboto;}
+.site-salary-table>button+button {border-top:1px solid #e8e8e8;}
+.site-salary-table span {flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.site-salary-table>button>span:first-child {font:700 12px/24px Roboto;color:black;}
+.site-salary-table>button>span:nth-child(2) {font:700 11px/24px Roboto;color:#07131b;}
+.site-salary-table>header>span:last-child,.site-salary-table strong {flex:0 0 92px;text-align:right;white-space:nowrap;}
+.site-salary-table strong {font:900 12px/24px Roboto;color:#168a35;}
+.site-expense-overview {padding:12px;border-radius:8px;outline:1px solid #e8e8e8;outline-offset:-1px;display:flex;flex-direction:column;gap:10px;}
+.site-expense-overview>strong {font:700 14px/24px Roboto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.site-expense-overview>div {display:flex;gap:8px;}
+.site-expense-overview>div>div {flex:1;min-width:0;display:flex;flex-direction:column;gap:3px;}
+.site-expense-overview small {color:#777;font:700 10px/24px Roboto;}
+.site-expense-overview b {font:700 13px/24px Roboto;}
+.site-expense-overview>footer {border-top:1px solid #e8e8e8;padding-top:10px;display:flex;justify-content:space-between;font:700 12px/24px Roboto;color:#07131b;}
+.site-expense-overview>footer b {color:#b77a00;font-size:14px;}
+.site-expense-list {display:flex;flex-direction:column;gap:8px;}
+.site-expense-list button {width:100%;border:0;border-radius:8px;background:white;text-align:left;box-shadow:0 1px 2px #0002;color:black;}
+.site-manager-expense {padding:11px;display:flex;align-items:center;outline:1px solid #f0f0f0;outline-offset:-1px;}
+.site-expense-thumbnail {width:66px;height:105px;flex-shrink:0;display:grid;place-items:center;border-radius:6px;outline:1px solid #e8e8e8;outline-offset:-1px;padding:4px;margin-right:11px;}
+.site-expense-thumbnail>img {width:100%;height:100%;object-fit:cover;border-radius:4px;min-height:0;}
+.site-expense-thumbnail>img[src$="ic_costs_gallery.svg"] {width:25px;height:25px;object-fit:contain;}
+.site-manager-expense-copy {flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;}
+.site-manager-expense-copy>* {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.site-manager-expense-copy strong {font:900 14px/24px Roboto;}
+.site-manager-expense-copy p {margin:0;color:#07131b;font:400 11px/24px Roboto;}
+.site-manager-expense-copy span {display:flex;align-items:center;gap:5px;color:#07131b;font:700 11px/24px Roboto;}
+.site-manager-expense-copy img {width:13px;height:13px;flex-shrink:0;}
+.site-manager-expense-copy small,.site-admin-expense>small {color:#777;font:700 10px/24px Roboto;}
+.site-manager-expense>b {margin-left:8px;font:900 14px/24px Roboto;color:#168a35;}
+.site-admin-expense {padding:12px;outline:1px solid #e8e8e8;outline-offset:-1px;display:flex;flex-direction:column;gap:6px;}
+.site-admin-expense>div {width:100%;display:flex;align-items:flex-start;gap:10px;font:900 14px/24px Roboto;}
+.site-admin-expense strong {flex:1;}
+.site-admin-expense b {color:#168a35;}
+.site-admin-expense>p {margin:0;color:#07131b;font:400 11px/24px Roboto;}
+.admin-expense-details {gap:18px;}
+.admin-expense-details>.admin-title>span img {width:31px;height:31px;}
+.admin-expense-details .admin-delivery-detail-value strong {line-height:21px;}
+.admin-expense-preview>button,.admin-expense-preview>button img {width:34px;height:34px;}

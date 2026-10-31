@@ -1,0 +1,9 @@
+.standard-site-date { display: flex; flex-direction: column; gap: 16px; }
+.standard-site-card { padding: 8px; border-radius: 8px; background: white; box-shadow: 0 2px 4px #0003; }
+.standard-date-row { display: flex; align-items: center; gap: 6px; }
+.standard-date-row > button { display: flex; justify-content: center; align-items: center; width: 32px; height: 32px; border: 1px solid #e8e8e8; border-radius: 8px; background: white; color: black; font: 700 19px Roboto, sans-serif; padding: 0; flex-shrink: 0; }
+.standard-date-row img { width: 17px; height: 17px; }
+.standard-date-row > div { flex: 1; min-width: 0; }
+.standard-date-row strong { display: block; font-size: 12px; line-height: 14px; font-weight: 900; }
+.standard-date-row small { display: block; font-size: 11px; line-height: 13px; color: #777; }
+.standard-date-row .standard-today { height: 40px; width: auto; padding: 0 12px; gap: 6px; margin-left: 2px; background: #ffc400; font-size: 13px; font-weight: 900; }

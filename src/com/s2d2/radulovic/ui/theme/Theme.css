@@ -1,3 +1,5 @@
+@font-face { font-family: 'Roboto'; src: url('/assets/fonts/Roboto-Bold.ttf') format('truetype'); font-style: normal; font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Roboto'; src: url('/assets/fonts/Roboto-Medium.ttf') format('truetype'); font-style: normal; font-weight: 500; font-display: swap; }
 @font-face {
   font-family: 'Roboto';
   src: url('/assets/fonts/Roboto-Regular.ttf') format('truetype');
@@ -40,3 +42,41 @@ html, body, #root {
 }
 
 body { margin: 0; }
+
+/* Shared SVG chevrons; direction changes without relying on font glyphs. */
+:root img.app-chevron { width:22px; height:22px; flex:0 0 22px; object-fit:contain; vertical-align:middle; }
+:root img.app-chevron-left { transform:rotate(180deg); }
+
+/* Suppress browser focus rings; component borders and selected states remain. */
+:where(button, input, textarea, select, a, summary, [tabindex], [contenteditable], dialog) {outline:none;}
+:where(button, input, textarea, select, a, summary, [tabindex], [contenteditable], dialog):focus,
+:where(button, input, textarea, select, a, summary, [tabindex], [contenteditable], dialog):focus-visible {outline:none;}
+* {-webkit-tap-highlight-color:transparent;}
+
+/* Fullscreen image close icons have no button background in any state. */
+dialog.admin-delivery-image-preview > button,
+dialog.delivery-image-preview > button,
+dialog.admin-note-fullscreen > .admin-note-close,
+dialog.note-photo-pager > .note-preview-close {
+  background: transparent !important;
+  box-shadow: none;
+  border: 0;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Text fields retain keyboard editing without iOS native focus decoration.
+   Screen-specific larger fonts remain; text-field overrides must stay >=16px.
+   Checkboxes, radio buttons and file pickers keep their existing rendering. */
+:where(input:not([type="checkbox"]):not([type="radio"]):not([type="file"]), textarea) {
+  font-size:16px;
+  appearance:none;
+  -webkit-appearance:none;
+  outline:none;
+  box-shadow:none;
+}
+:where(input:not([type="checkbox"]):not([type="radio"]):not([type="file"]), textarea):focus,
+:where(input:not([type="checkbox"]):not([type="radio"]):not([type="file"]), textarea):focus-visible {
+  outline:none;
+  box-shadow:none;
+}

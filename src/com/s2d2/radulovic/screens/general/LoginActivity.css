@@ -181,12 +181,6 @@
   visibility: visible;
 }
 
-.login-checkbox:focus-visible,
-.login-input-row:focus-within {
-  outline: 2px solid var(--radulovic-dark);
-  outline-offset: 3px;
-}
-
 .login-submit {
   display: grid;
   place-items: center;
@@ -206,8 +200,6 @@
   cursor: default;
 }
 
-.login-submit:focus-visible,
-.login-password-visibility:focus-visible {
-  outline: 2px solid var(--radulovic-dark);
-  outline-offset: 3px;
-}
+.login-submit { cursor: pointer; }
+.login-submit:disabled { cursor: wait; opacity: .7; }
+@supports (-webkit-touch-callout: none) { .login-input-row input { font-size: 16px; } }

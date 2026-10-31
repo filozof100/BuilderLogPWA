@@ -1,0 +1,4 @@
+.app-toast {position:fixed;z-index:10000;left:50%;bottom:max(64px,calc(env(safe-area-inset-bottom) + 24px));transform:translateX(-50%);width:max-content;max-width:calc(100vw - 48px);padding:12px 20px;border-radius:24px;background:rgba(45,45,45,.95);color:white;font:400 14px/20px Roboto,sans-serif;text-align:center;box-shadow:0 2px 6px #0003;pointer-events:none;overflow-wrap:anywhere;}
+
+.app-toast {margin:0;top:auto;right:auto;border:0;}
+.app-toast::backdrop {background:transparent;pointer-events:none;}

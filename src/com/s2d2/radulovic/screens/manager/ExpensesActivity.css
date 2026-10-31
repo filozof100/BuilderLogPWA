@@ -1,0 +1,74 @@
+.manager-expenses { width:100%; max-width:none; margin:0 auto; height:100dvh; min-height:600px; padding:max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 20px max(20px, env(safe-area-inset-left)); display:flex; flex-direction:column; gap:16px; }
+.expense-title > span img { width:31px; height:31px; }
+.expense-add-actions { display:flex; gap:10px; }
+.expense-add-actions button { flex:1; min-width:0; height:48px; display:flex; align-items:center; justify-content:center; gap:8px; border:1px solid #e8e8e8; background:white; border-radius:8px; padding:0 10px; font:900 11px Roboto,sans-serif; color:black; }
+.expense-add-actions button:first-child { background:#ffc400; border-color:#ffc400; font-size:12px; }
+.expense-add-actions img { width:20px; height:20px; flex-shrink:0; }
+.expense-add-actions button:disabled { opacity:.5; }
+.expense-summary { align-items:start; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.expense-summary > div { border-radius:8px; padding:10px; min-width:0; position:relative; }
+.expense-advanced { background:#f1f7ff; color:#0d66b3; }
+.expense-spent { background:#f2fbf3; color:#168a35; }
+.expense-summary h3 { font-size:10px; line-height:24px; font-weight:900; margin:0 24px 4px 0; }
+.expense-summary > div > img { position:absolute; top:10px; right:10px; width:20px; height:20px; }
+.expense-summary > div > strong { display:block; font-size:21px; line-height:22px; font-weight:900; overflow-wrap:anywhere; }
+.expense-summary small { display:block; font-size:10px; line-height:10px; font-weight:700; }
+.expense-remaining { background:white; border-radius:8px; margin-top:8px; padding:7px 8px; display:flex; flex-direction:column; gap:3px; }
+.expense-remaining span { color:#07131b; font-size:10px; font-weight:700; }
+.expense-remaining strong { color:#ffc400; font-size:15px; font-weight:900; overflow-wrap:anywhere; }
+.expense-advances { position:relative; margin-top:8px; }
+.expense-advances > button { display:flex; gap:5px; align-items:center; background:none; border:0; padding:0; color:#07131b; font:700 11px Roboto,sans-serif; }
+.expense-advances > button img { width:14px; height:14px; }
+.expense-advances-popup { position:absolute; top:calc(100% + 8px); left:0; width:min(280px, calc(100vw - 60px)); z-index:5; background:white; color:black; border-radius:8px; box-shadow:0 4px 12px #0004; overflow:hidden; }
+.expense-advances-popup > div, .expense-advances-popup section > div { display:flex; justify-content:space-between; gap:8px; align-items:center; padding:0 14px; min-height:44px; font-size:13px; border-bottom:1px solid #f0f0f0; }
+.expense-advances-popup > div { background:#f8f8f8; color:#777; min-height:40px; font-size:12px; font-weight:700; }
+.expense-advances-popup section { max-height:176px; overflow:auto; }
+.expense-list { flex:1; min-height:0; display:flex; flex-direction:column; gap:10px; }
+.expense-list h2 { font-size:14px; font-weight:900; margin:0; line-height:24px; }
+.expense-row { display:flex; gap:12px; padding:12px; background:white; border:1px solid #f0f0f0; box-shadow:0 1px 3px #0002; border-radius:8px; align-items:flex-start; }
+.expense-thumb { width:48px; height:74px; flex-shrink:0; border:1px solid #e8e8e8; border-radius:6px; padding:4px; background:white; overflow:hidden; align-self:center; }
+.expense-thumb img { width:100%; height:100%; object-fit:cover; border-radius:4px; }
+.expense-thumb img.expense-placeholder { padding:12px; object-fit:contain; }
+.expense-row-end { display:flex; flex-direction:column; align-items:flex-end; gap:12px; max-width:40%; }
+.expense-row-end > strong { color:#168a35; font-size:15px; font-weight:900; overflow-wrap:anywhere; }
+.expense-row-end .delivery-delete { width:34px; height:34px; }
+.expense-row-end .delivery-delete img { width:18px; height:18px; }
+.expense-options { display:flex; flex-direction:column; gap:10px; }
+.expense-options button { display:flex; align-items:center; gap:10px; min-height:48px; padding:0 14px; border:1px solid #e8e8e8; border-radius:8px; background:white; color:black; font:900 14px Roboto,sans-serif; }
+.expense-options img { width:21px; height:21px; }
+.expense-form .delivery-form-image img { object-fit:contain; }
+.expense-form .delivery-form-image img.expense-placeholder { width:52px; height:52px; }
+.expense-form textarea { height:82px; }
+
+/* ExpensesActivity.kt uses fixed controls followed by a separately scrolling list. */
+.manager-expenses > :not(.expense-list) { flex-shrink:0; }
+.expense-scroll { flex:1; min-height:0; overflow-y:auto; display:flex; flex-direction:column; gap:8px; padding:1px; margin:-1px; }
+.expense-row { flex-shrink:0; }
+.expense-title { position:relative; gap:14px; }
+.expense-title .delivery-back { position:absolute; left:-20px; width:20px; }
+.expense-title h1, .expense-title p { line-height:24px; }
+.expense-site-picker .selection-dropdown > label { line-height:24px; }
+.expense-site-picker .selection-field { height:38px; min-height:38px; padding:0 12px; }
+.expense-site-picker .selection-value { line-height:24px; }
+.expense-add-actions button, .expense-options button { line-height:24px; letter-spacing:.5px; }
+.expense-summary > .expense-spent { padding:9px; }
+.expense-summary > .expense-spent > img { width:24px; height:24px; top:9px; right:9px; }
+.expense-summary > .expense-advanced > img { right:12px; }
+.expense-summary > div > strong, .expense-summary > div > small { margin-right:24px; }
+.expense-remaining { margin-right:24px; }
+.expense-remaining span, .expense-remaining strong { line-height:24px; }
+.expense-advances > button { line-height:24px; letter-spacing:.5px; }
+.expense-row .delivery-details > * { line-height:24px; letter-spacing:.5px; }
+.expense-row-end { margin-left:-2px; }
+.expense-row-end > strong { line-height:24px; }
+.expense-form { max-width:none; }
+.expense-form .delivery-form-field { line-height:24px; }
+.expense-form .delivery-form-field input, .expense-form .delivery-form-field textarea { line-height:normal; }
+.expense-form .delivery-form-image { display:grid; place-items:center; }
+.expense-form .delivery-form-image img { object-fit:cover; }
+.expense-form .delivery-form-image img.expense-placeholder { object-fit:contain; }
+.expense-option-dialog, .expense-delete-dialog { max-width:560px; }
+.expense-option-dialog h2, .expense-delete-dialog h2 { font-weight:700; }
+.expense-delete-dialog .app-dialog-body { line-height:24px; }
+.expense-delete-dialog .app-dialog-actions > button:first-child { background:white; }
+.expense-image-preview > img { padding:16px; }

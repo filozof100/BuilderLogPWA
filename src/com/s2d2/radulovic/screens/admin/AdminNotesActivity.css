@@ -1,0 +1,23 @@
+.admin-notes>.admin-title>span img {width:34px;height:34px;}
+.admin-notes-filters {padding:8px;border-radius:8px;background:white;box-shadow:0 2px 4px #0003;display:flex;flex-direction:column;gap:12px;}
+.admin-notes-filters .admin-delivery-sites {padding:0;box-shadow:none;}
+.admin-notes-dates {display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.admin-notes-dates .admin-date {min-width:0;gap:2px;}
+.admin-notes-dates .admin-date>span {color:black;font:700 12px/24px Roboto;}
+.admin-notes-dates .admin-date button {height:36px;min-height:36px;padding:0 10px;gap:6px;border:1px solid #e8e8e8;border-radius:8px;background:white;white-space:nowrap;font:900 12px/24px Roboto;}
+.admin-notes-dates .admin-date img {width:15px;height:15px;flex-shrink:0;}
+.admin-notes>h2 {font:900 16px/24px Roboto;}
+.admin-notes>.admin-notice {min-height:118px;display:flex;flex-direction:column;justify-content:center;align-items:center;background:rgb(255 196 0 / 12%);font:700 13px/24px Roboto;}
+.admin-notes-list {display:flex;flex-direction:column;gap:8px;}
+.admin-note-card {display:flex;align-items:center;padding:12px;gap:12px;border-radius:8px;background:white;box-shadow:0 1px 2px #0003;}
+.admin-note-copy {flex:1;min-width:0;}
+.admin-note-copy time,.admin-note-copy small {display:block;color:#777;font:700 11px/24px Roboto;}
+.admin-note-copy>strong {display:block;margin-top:3px;color:#07131b;font:900 11px/24px Roboto;}
+.admin-note-copy>strong,.admin-note-copy>small {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.admin-note-copy>p {margin:8px 0;color:black;font:400 14px/17px Roboto;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere;}
+.admin-note-workers {display:flex;align-items:center;gap:5px;margin-top:6px;color:#07131b;font:700 11px/24px Roboto;}
+.admin-note-workers img {width:16px;height:16px;flex-shrink:0;}
+.admin-note-thumbnail {width:92px;height:68px;flex-shrink:0;border:1px solid #e8e8e8;border-radius:6px;padding:4px;display:grid;place-items:center;background:white;overflow:hidden;}
+.admin-note-thumbnail>img {width:100%;height:100%;min-height:0;object-fit:cover;border-radius:4px;}
+.admin-note-thumbnail>img.admin-note-placeholder {padding:18px;object-fit:contain;}
+.admin-note-thumbnail .attachment-image-error {font:400 10px/14px Roboto;text-align:center;}

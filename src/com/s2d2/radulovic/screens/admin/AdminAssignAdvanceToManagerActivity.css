@@ -1,0 +1,38 @@
+.admin-assign-manager {padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));gap:14px;}
+.admin-assign-manager>.admin-title {gap:12px;}
+.admin-assign-manager>.admin-title>span {width:54px;height:54px;}
+.admin-assign-manager>.admin-title>span img {width:32px;height:32px;}
+.assign-manager-picker {padding:9px;}
+.assign-manager-picker.locked,.admin-assign-manager>.site-expense-period.locked {background:#f0f0f0;}
+.assign-manager-picker.locked .selection-dropdown>label {color:#777;}
+.assign-manager-picker.locked .selection-field {background:#e2e2e2;color:#555;}
+.admin-assign-manager>.site-expense-period.locked .admin-date {opacity:.72;}
+.admin-assign-manager>.site-expense-period.locked button {background:#e9e9e9;}
+.assign-manager-total {display:flex;align-items:center;padding:12px;gap:12px;background:#f1f7ff;border-radius:8px;}
+.assign-manager-total>span {display:grid;place-items:center;width:50px;height:50px;flex-shrink:0;background:#e1eeff;border-radius:8px;}
+.assign-manager-total img {width:30px;height:30px;}
+.assign-manager-total>div {min-width:0;}
+.assign-manager-total strong {display:block;font:700 13px/24px Roboto;color:black;}
+.assign-manager-total b {display:block;font:900 22px/24px Roboto;color:#1973c9;overflow-wrap:anywhere;}
+.assign-new-advance {height:52px;flex-shrink:0;border:0;border-radius:8px;background:#ffc400;color:black;display:flex;align-items:center;justify-content:center;gap:7px;font:900 14px/24px Roboto;}
+.assign-new-advance:disabled {background:#e8e8e8;color:#777;}
+.assign-new-advance svg {width:20px;height:20px;fill:currentColor;}
+.assign-manager-list {display:flex;flex-direction:column;gap:8px;}
+.assign-manager-list h2 {font:900 15px/24px Roboto;}
+.assign-manager-list>.admin-notice {height:72px;min-height:72px;background:rgb(255 196 0 / 12%);font:700 13px/24px Roboto;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.assign-advance-table {max-height:208px;overflow-y:auto;overscroll-behavior:contain;border-radius:8px;outline:1px solid #e8e8e8;outline-offset:-1px;box-shadow:0 1px 2px #0002;}
+.assign-advance-row {display:flex;align-items:center;height:52px;padding:0 12px;gap:8px;border-bottom:1px solid #e8e8e8;}
+.assign-advance-row:last-child {border-bottom:0;}
+.assign-advance-edit {display:flex;align-items:center;justify-content:space-between;gap:8px;flex:1;min-width:0;height:51px;padding:0;border:0;background:white;color:black;font:900 13px/24px Roboto;text-align:left;}
+.assign-advance-edit b {font-weight:900;}
+.assign-advance-delete {display:grid;place-items:center;width:32px;height:32px;flex-shrink:0;border:0;border-radius:7px;background:#fff4f5;padding:0;}
+.assign-advance-delete img {width:19px;height:19px;}
+.assign-advance-confirm.app-dialog {width:calc(100% - 48px);max-width:560px;border-radius:28px;background:#fffbf0;}
+.assign-advance-confirm .app-dialog-content {padding:24px;}
+.assign-advance-confirm.app-dialog h2 {margin:0 0 16px;color:black;font:900 24px/32px Roboto;}
+.assign-advance-confirm .app-dialog-body p {margin:0;color:black;font:400 14px/20px Roboto;}
+.assign-advance-confirm .app-dialog-body .error-message {color:#b3261e;}
+.assign-advance-confirm .app-dialog-actions {margin-top:24px;gap:8px;}
+.assign-advance-confirm .app-dialog-actions button {min-width:64px;height:40px;padding:0 12px;border:0;border-radius:20px;background:transparent;color:black;font:500 14px/20px Roboto;}
+.assign-advance-confirm .app-dialog-actions .confirm-button {background:#ffc400;font-weight:900;}
+.assign-advance-confirm .app-dialog-actions button:disabled {color:#777;}

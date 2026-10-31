@@ -1,0 +1,9 @@
+.admin-task-creation>fieldset {display:flex;flex-direction:column;gap:16px;margin:0;padding:0;border:0;min-width:0;}
+.admin-task-input {display:flex;flex-direction:column;gap:6px;color:#07131b;font:900 14px/24px Roboto;}
+.admin-task-input input,.admin-task-input textarea {box-sizing:border-box;width:100%;height:48px;border:1px solid #e8e8e8;border-radius:8px;background:white;padding:0 12px;color:black;font:400 16px/20px Roboto;outline:none;}
+.admin-task-input textarea {height:120px;padding:10px 12px;resize:none;}
+.admin-task-input input::placeholder,.admin-task-input textarea::placeholder {color:#777;opacity:1;}
+.admin-task-input [aria-invalid=true] {border-color:#b3261e;}
+.admin-task-creation .error-message {margin:0;color:#b3261e;font:400 12px/20px Roboto;}
+
+.admin-task-creation .task-selection-error {display:block;color:#b3261e;font:400 12px/24px Roboto;}

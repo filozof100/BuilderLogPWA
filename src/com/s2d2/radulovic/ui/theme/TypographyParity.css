@@ -1,0 +1,38 @@
+/* Android Type.kt: Text inherits bodyLarge's 24sp line height and .5sp tracking.
+   Keep explicit compact metrics (dates, worker cells, money) below. Editable
+   fields stay at 16px so iOS does not zoom the viewport when focusing them. */
+button, input, textarea { font-family: Roboto, sans-serif; }
+button { letter-spacing:inherit; }
+.delivery-title h1, .delivery-title p, .documents-title h1, .documents-title p,
+.workers-title h1, .workers-title p, .driver-title h1, .driver-title p,
+.settings-title h1, .settings-field label, .delivery-form-field,
+.manager-site-picker .selection-dropdown > label, .manager-site-picker .selection-value,
+.document-heading h2, .document-card > p, .document-actions button,
+.delivery-details strong, .delivery-details span, .delivery-details b, .delivery-details small,
+.manager-task-group-heading strong, .manager-task-group-heading small,
+.manager-task-status h2, .manager-task-text > strong, .manager-task-text > span,
+.manager-task-text small, .manager-task-text b, .worker-editor-person small,
+.worker-time-section > label, .worker-reason, .work-label, .card-heading,
+.day-button, .task-description strong, .task-description small {
+  line-height:24px;
+}
+.manager-site-picker .selection-field { height:38px; min-height:38px; padding-top:0; padding-bottom:0; }
+.standard-date-row strong, .workers-date-row strong { line-height:12px; }
+.standard-date-row small, .workers-date-row small { line-height:11px; }
+.worker-cell small { line-height:7px; }
+.worker-editor-person strong { font-weight:900; }
+.app-dialog .worker-editor-person strong { font-weight:900; }
+.worker-editor .confirm-button { font-size:15px; }
+.manager-header h1 { line-height:24px; }
+.manager-name, .manager-admin-tasks strong, .manager-admin-tasks small { line-height:24px; }
+.delivery-details b, .document-card > p { font-weight:700; }
+.note-card-text small, .note-readonly small, .note-readonly strong { line-height:24px; }
+.note-card-text > span { line-height:17px; }
+.manager-task-details h2 { line-height:24px; }
+.manager-task-details p { line-height:19px; }
+
+.task-description span { line-height:15px; }
+.task-description strong, .work-value strong { font-weight:900; }
+.task-description small, .work-value small { font-weight:700; }
+.app-dialog.task-dialog h2 { font-size:18px; line-height:24px; }
+.task-dialog .muted { font-size:12px; line-height:24px; font-weight:700; }

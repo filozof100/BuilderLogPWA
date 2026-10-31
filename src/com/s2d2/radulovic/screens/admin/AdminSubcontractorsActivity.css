@@ -1,0 +1,23 @@
+.admin-subcontractors>.admin-title {gap:14px;}
+.admin-subcontractors>.admin-title>span img {width:48px;height:48px;}
+.admin-subcontractors>.admin-search {height:48px;min-height:48px;padding:0 14px;gap:10px;}
+.admin-subcontractors>.admin-search img {width:22px;height:22px;}
+.admin-subcontractors>.admin-search input::placeholder {font-size:14px;color:#777;opacity:1;}
+.admin-subcontractor-add {height:48px;flex-shrink:0;border:0;border-radius:8px;background:#ffc400;color:black;font:900 14px/24px Roboto;display:flex;align-items:center;justify-content:center;gap:8px;opacity:1;}
+.admin-subcontractor-add svg {width:22px;height:22px;}
+.admin-subcontractor-list {display:flex;flex-direction:column;gap:8px;}
+.admin-subcontractor-row {display:flex;align-items:center;padding:12px;border-radius:8px;background:white;box-shadow:0 1px 2px #0003;}
+.admin-subcontractor-icon {width:44px;height:44px;flex-shrink:0;background:#fff1bf;border-radius:50%;display:grid;place-items:center;margin-right:12px;}
+.admin-subcontractor-icon img {width:34px;height:34px;object-fit:contain;}
+.admin-subcontractor-row>strong {flex:1;min-width:0;color:black;font:900 14px/24px Roboto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.admin-subcontractor-row>button {width:40px;height:40px;flex-shrink:0;display:grid;place-items:center;padding:0;border:0;background:transparent;}
+.admin-subcontractor-row>button i {width:24px;height:24px;background:#e85a67;mask:url('/assets/drawable/ic_costs_trash.svg') center/contain no-repeat;}
+.admin-subcontractors>.admin-notice {min-height:92px;display:flex;align-items:center;justify-content:center;background:rgb(255 196 0 / 12%);font:700 13px/24px Roboto;}
+.admin-subcontractor-delete.app-dialog {width:90%;max-width:684px;background:white;border-radius:8px;}
+.admin-subcontractor-delete .app-dialog-content {padding:20px;display:flex;flex-direction:column;gap:16px;}
+.admin-subcontractor-delete.app-dialog h2 {margin:0;font:900 20px/24px Roboto;color:black;}
+.admin-subcontractor-delete .app-dialog-body {padding:0;margin:0;}
+.admin-subcontractor-delete p {margin:0;color:#07131b;font:700 14px/24px Roboto;}
+.admin-subcontractor-delete .app-dialog-actions {padding:0;margin:0;display:flex;justify-content:flex-end;gap:8px;}
+.admin-subcontractor-delete .app-dialog-actions button {height:44px;padding:0 16px;background:transparent;border:0;color:black;font:700 14px/24px Roboto;}
+.admin-subcontractor-delete .app-dialog-actions .subcontractor-delete-confirm {padding:0 18px;background:#e00015;border-radius:8px;color:white;font:900 14px/24px Roboto;}

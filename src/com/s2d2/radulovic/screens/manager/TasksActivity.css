@@ -1,0 +1,41 @@
+.manager-tasks { width:100%; max-width:760px; margin:0 auto; padding:max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 20px max(20px, env(safe-area-inset-left)); display:flex; flex-direction:column; gap:16px; }
+.manager-tasks .delivery-title .manager-tasks-icon { width:30px; height:40px; object-fit:contain; }
+.manager-tasks-site { padding:8px; box-shadow:0 2px 4px #0003; border-radius:8px; }
+.manager-task-group { border-radius:8px; padding:12px; display:flex; flex-direction:column; gap:12px; }
+.task-group-general { --task-accent:#0d66b3; background:#f2f7ff; }
+.task-group-site { --task-accent:#168a35; background:#f2fbf3; }
+.task-group-manager { --task-accent:#b56b00; background:#fff8e8; }
+.manager-task-group-heading { display:flex; align-items:center; gap:8px; width:100%; padding:0; background:none; border:0; text-align:left; }
+.manager-task-group-heading > span { flex:1; display:flex; flex-direction:column; gap:4px; }
+.manager-task-group-heading strong { color:var(--task-accent); font:900 16px/21px Roboto,sans-serif; }
+.manager-task-group-heading small { color:#777; font:700 11px/16px Roboto,sans-serif; }
+.manager-task-group-heading img { width:22px; height:22px; }
+.manager-task-unread { width:8px; height:8px; border-radius:50%; background:#e00015; }
+.manager-task-status { display:flex; flex-direction:column; gap:8px; }
+.manager-task-status h2 { margin:0; font:900 13px/18px Roboto,sans-serif; color:black; }
+.manager-task-status h2 span { margin-left:8px; color:var(--task-accent); }
+.manager-task-row { display:flex; align-items:flex-start; gap:6px; border:1px solid #f0f0f0; border-radius:8px; background:white; box-shadow:0 1px 3px #0002; padding:10px; }
+.manager-task-checkbox { width:48px; height:48px; flex-shrink:0; display:grid; place-items:center; }
+.manager-task-checkbox input { width:18px; height:18px; margin:0; accent-color:var(--task-accent); cursor:pointer; }
+.manager-task-text { flex:1; min-width:0; display:flex; flex-direction:column; gap:3px; border:0; background:none; padding:0; text-align:left; color:black; }
+.manager-task-text > strong { max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font:900 14px/20px Roboto,sans-serif; }
+.manager-task-text > span { color:#07131b; font:400 12px/17px Roboto,sans-serif; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; overflow-wrap:anywhere; }
+.manager-task-text small { margin-top:3px; color:#777; font:700 11px/16px Roboto,sans-serif; }
+.manager-task-text b { color:#07131b; font:700 11px/16px Roboto,sans-serif; }
+.manager-task-details { width:76vw; max-width:580px; max-height:calc(100dvh - 32px); overflow:auto; border:0; border-radius:16px; padding:0; background:#fffbf0; color:black; }
+.manager-task-details::backdrop { background:#0005; }
+.manager-task-details > div { padding:18px; display:flex; flex-direction:column; gap:12px; }
+.manager-task-details h2 { margin:0; font:900 19px/24px Roboto,sans-serif; overflow-wrap:anywhere; }
+.manager-task-date { display:flex; align-items:center; gap:10px; }
+.manager-task-date > span { width:40px; height:40px; display:grid; place-items:center; border:1px solid #e8e8e8; border-radius:8px; background:white; }
+.manager-task-date img { width:20px; height:20px; }
+.manager-task-date > div { display:flex; flex-direction:column; }
+.manager-task-date small { color:#777; font:900 12px/17px Roboto,sans-serif; }
+.manager-task-date strong { font:900 14px/20px Roboto,sans-serif; }
+.manager-task-details hr { margin:0; width:100%; height:1px; border:0; background:#e8e8e8; }
+.manager-task-details h3 { margin:0; font:900 13px/18px Roboto,sans-serif; color:#07131b; }
+.manager-task-details p { margin:0; min-height:74px; padding:12px; background:white; border:1px solid #e8e8e8; border-radius:8px; font:400 14px/19px Roboto,sans-serif; white-space:pre-wrap; overflow-wrap:anywhere; }
+.manager-task-details footer { display:flex; justify-content:flex-end; }
+.manager-task-details footer button { width:104px; height:44px; border:0; border-radius:10px; background:#ffc400; color:black; font:900 15px Roboto,sans-serif; }
+
+.manager-task-group .delivery-notice { min-height:0; padding:5px 11px; }

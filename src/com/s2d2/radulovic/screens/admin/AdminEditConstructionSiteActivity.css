@@ -1,0 +1,50 @@
+.admin-edit-site {height:100dvh;min-height:0;overflow:hidden;}
+.admin-edit-site>.admin-title img {width:40px;height:40px;}
+.edit-site-scroll {flex:1;min-height:0;overflow:auto;}
+.edit-site-fields {margin:0;padding:14px;border:1px solid #d0d0d0;border-radius:8px;display:flex;flex-direction:column;gap:16px;min-width:0;}
+.edit-site-field {display:flex;flex-direction:column;gap:5px;min-width:0;}
+.edit-site-field>span {font:900 13px/24px Roboto;color:#07131b;}
+.edit-site-field input {height:46px;width:100%;padding:0 12px;border:1px solid #e8e8e8;border-radius:8px;background:white;color:black;font:400 16px/24px Roboto;}
+.edit-site-field input::placeholder {color:#777;opacity:1;font-size:14px;}
+.edit-site-manager-picker {display:flex;align-items:center;gap:8px;width:100%;height:48px;padding:0 12px;border:1px solid #e8e8e8;border-radius:8px;background:white;color:black;text-align:left;font:700 14px/24px Roboto;}
+.edit-site-manager-picker>span {flex:1;min-width:0;}
+.edit-site-manager-picker .muted {color:#777;}
+.edit-site-manager-picker img {width:22px;height:22px;}
+.edit-site-field [aria-invalid=true] {border-color:#b3261e;}
+.edit-site-error {font:400 12px/20px Roboto;color:#b3261e;}
+.edit-site-chips {display:flex;gap:6px;overflow-x:auto;margin-top:3px;}
+.edit-site-chips>span {display:flex;align-items:center;gap:4px;padding:3px 4px 3px 10px;border:1px solid #ffc400;border-radius:8px;background:#fff1bf;white-space:nowrap;font:700 12px/24px Roboto;}
+.edit-site-chips button {width:24px;height:24px;padding:4px;background:transparent;border:0;flex-shrink:0;}
+.edit-site-chips i {display:block;width:16px;height:16px;background:#ffc400;mask:url('/assets/drawable/ic_close_yellow.svg') center/contain no-repeat;}
+.edit-site-status {display:flex;height:46px;border-radius:8px;overflow:hidden;outline:1px solid #d0d0d0;outline-offset:-1px;}
+.edit-site-status button {flex:1;border:0;background:white;color:#777;font:700 14px/24px Roboto;}
+.edit-site-status button[aria-pressed=true] {background:#ffc400;color:black;font-weight:900;}
+.edit-site-delete {display:flex;align-items:center;gap:6px;margin-top:12px;min-height:48px;padding:0 12px;border:0;background:transparent;color:#e00015;font:700 14px/24px Roboto;}
+.edit-site-delete svg {width:20px;height:20px;}
+.edit-site-footer {display:flex;gap:10px;flex-shrink:0;}
+.edit-site-footer button {flex:1;height:48px;display:flex;align-items:center;justify-content:center;gap:6px;border:1px solid #07131b;background:white;border-radius:8px;color:black;font:700 14px/24px Roboto;}
+.edit-site-footer button:last-child {background:#ffc400;border:0;font-weight:900;}
+.edit-site-footer img {width:18px;height:18px;}
+.site-managers-dialog.app-dialog,.edit-site-delete-dialog.app-dialog {width:90%;max-width:684px;background:white;border-radius:8px;}
+.site-managers-dialog .app-dialog-content {padding:18px;display:flex;flex-direction:column;gap:14px;}
+.site-managers-dialog.app-dialog h2 {margin:0;font:900 19px/24px Roboto;color:black;}
+.site-managers-dialog .app-dialog-body {padding:0;margin:0;display:flex;flex-direction:column;gap:14px;}
+.site-managers-dialog p {margin:0;font:400 12px/24px Roboto;color:#777;}
+.site-managers-list {display:flex;flex-direction:column;gap:8px;max-height:360px;overflow-y:auto;}
+.site-managers-list>button {display:flex;align-items:center;gap:10px;min-height:54px;padding:0 12px;border:1px solid #e8e8e8;border-radius:8px;background:white;color:black;text-align:left;font:700 14px/24px Roboto;}
+.site-managers-list>button[aria-checked=true] {background:#fff1bf;border-color:#ffc400;}
+.site-managers-list i {display:grid;place-items:center;width:28px;height:28px;flex-shrink:0;border:1px solid #e8e8e8;border-radius:6px;}
+.site-managers-list [aria-checked=true] i {background:#ffc400;border-color:#ffc400;}
+.site-managers-list svg {width:18px;height:18px;}
+.site-managers-message {min-height:80px;display:grid;place-items:center;text-align:center;border:1px solid #ffc400;border-radius:8px;background:rgb(255 196 0 / 12%);color:#777;font:700 13px/24px Roboto;}
+.site-managers-dialog .app-dialog-actions {display:flex;gap:10px;margin:0;padding:0;}
+.site-managers-dialog .app-dialog-actions button {flex:1;height:46px;padding:0;border:1px solid #07131b;border-radius:8px;background:white;color:black;font:700 14px/24px Roboto;}
+.site-managers-dialog .app-dialog-actions button:last-child {background:#ffc400;border:0;font-weight:900;}
+.site-managers-dialog .app-dialog-actions button:disabled {background:#e8e8e8;color:#777;}
+.edit-site-delete-dialog .app-dialog-content {padding:20px;display:flex;flex-direction:column;gap:16px;}
+.edit-site-delete-dialog.app-dialog h2 {margin:0;font:900 20px/24px Roboto;color:black;}
+.edit-site-delete-dialog .app-dialog-body {padding:0;margin:0;}
+.edit-site-delete-dialog p {margin:0;font:700 14px/24px Roboto;color:#07131b;}
+.edit-site-delete-dialog .app-dialog-actions {display:flex;justify-content:flex-end;gap:8px;margin:0;padding:0;}
+.edit-site-delete-dialog .app-dialog-actions button {height:44px;padding:0 16px;border:0;background:transparent;color:black;font:700 14px/24px Roboto;}
+.edit-site-delete-dialog .app-dialog-actions .confirm-delete {background:#e00015;color:white;border-radius:8px;font-weight:900;}

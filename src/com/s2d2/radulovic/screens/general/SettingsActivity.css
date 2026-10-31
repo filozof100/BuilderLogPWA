@@ -1,0 +1,33 @@
+.settings-screen { min-height: 100svh; height: 100dvh; background: white; color: black; padding: max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left)); display: flex; flex-direction: column; gap: 16px; width: 100%; max-width: 680px; margin: 0 auto; }
+.role-screen[hidden] { display: none; }
+.settings-title { display: flex; align-items: center; flex-shrink: 0; }
+.settings-title h1 { flex: 1; margin: 0 0 0 10px; font-size: 14px; line-height: 20px; font-weight: 900; }
+.settings-action-icon { flex: 0 0 48px; width: 48px; height: 48px; display: grid; place-items: center; padding: 0; border: 0; background: none; color: black; }
+.settings-title .logout-button { color: #c74455; }
+.settings-title .logout-button svg { width: 28px; height: 28px; }
+.settings-avatar { width: 46px; height: 46px; flex: 0 0 46px; border-radius: 50%; background: var(--radulovic-yellow); display: grid; place-items: center; }
+.settings-avatar svg { width: 26px; height: 26px; }
+.settings-form { display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 16px; }
+.settings-fields { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; padding: 2px; margin: -2px; }
+.settings-field { flex-shrink: 0; }
+.settings-field label { display: block; color: var(--radulovic-dark); font-size: 13px; font-weight: 900; line-height: 18px; margin-bottom: 5px; }
+.settings-input { display: flex; align-items: center; height: 46px; padding: 0 12px; border: 1px solid var(--radulovic-border); border-radius: 8px; gap: 8px; }
+.settings-input input { flex: 1; min-width: 0; width: 100%; height: 100%; border: none; outline: none; padding: 0; background: transparent; color: black; font: 16px Roboto, sans-serif; }
+.settings-input input::placeholder { color: var(--radulovic-muted); opacity: 1; }
+.settings-input.invalid { border-color: #b3261e; }
+.settings-input .password-toggle { display: grid; place-items: center; width: 32px; height: 44px; border: 0; background: none; padding: 0; color: #333; }
+.settings-field-error { font-size: 12px; line-height: 16px; margin: 4px 0 0; color: #b3261e; }
+.settings-actions { display: flex; gap: 10px; flex-shrink: 0; }
+.settings-actions button { flex: 1; height: 48px; border: 1px solid var(--radulovic-border); border-radius: 8px; background: white; color: black; font: 700 14px Roboto, sans-serif; display: flex; align-items: center; justify-content: center; gap: 7px; }
+.settings-actions .settings-save { background: var(--radulovic-yellow); border: 0; font-weight: 900; }
+.settings-actions .settings-save:disabled { background: #ccc; }
+.settings-save img { width: 20px; height: 20px; }
+.app-dialog.settings-logout-dialog { width: min(560px, 90%); background: white; border-radius: 8px; }
+.settings-logout-dialog .app-dialog-content { padding: 20px; }
+.app-dialog.settings-logout-dialog h2 { display: flex; align-items: center; gap: 10px; font-size: 19px; line-height: 24px; margin-bottom: 18px; }
+.settings-logout-dialog h2 svg { color: #c74455; }
+.settings-logout-dialog .app-dialog-actions { gap: 10px; margin-top: 18px; }
+.settings-logout-dialog .text-button { flex: 1; min-height: 46px; display: flex; align-items: center; justify-content: center; gap: 6px; border-radius: 8px; padding: 8px; }
+.settings-logout-dialog .logout-button { background: #fff0f2; color: #c74455; }
+.settings-logout-dialog .logout-button svg { width: 18px; height: 18px; }
+.settings-toast { position: fixed; bottom: max(24px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); max-width: calc(100% - 40px); padding: 12px 20px; border-radius: 8px; background: #333; color: white; font-size: 14px; z-index: 10; text-align: center; pointer-events: none; }

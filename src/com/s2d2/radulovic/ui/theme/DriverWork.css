@@ -1,0 +1,66 @@
+.driver-work-screen { width: 100%; max-width: 680px; margin: 0 auto; padding: max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 20px max(20px, env(safe-area-inset-left)); display: flex; flex-direction: column; gap: 14px; }
+.driver-title { display: flex; align-items: center; gap: 14px; }
+.driver-title > div { flex: 1; min-width: 0; }
+.driver-title h1 { font-size: 14px; font-weight: 900; margin: 0 0 3px; }
+.driver-title p { font-size: 9px; margin: 0; line-height: 13px; }
+.driver-avatar { width: 58px; height: 58px; flex: 0 0 58px; border-radius: 50%; background: var(--radulovic-yellow); display: grid; place-items: center; }
+.driver-avatar .work-icon { width: 42px; height: 42px; }
+.driver-title .settings-access-bar { padding: 0; }
+.driver-title .settings-icon-button { width: 32px; }
+.work-card { padding: 12px; display: flex; flex-direction: column; gap: 12px; border-radius: 8px; background: #fff; box-shadow: 0 1px 3px #0003; }
+.work-row { display: flex; gap: 10px; }
+.work-row > * { flex: 1; min-width: 0; }
+.work-label { display: block; font-size: 11px; line-height: 16px; font-weight: 900; margin-bottom: 4px; }
+.work-value { width: 100%; min-height: 44px; border: 1px solid var(--radulovic-border); border-radius: 8px; display: flex; align-items: center; gap: 8px; padding: 8px 10px; background: white; color: black; text-align: left; font: inherit; }
+.work-value strong { font-size: 14px; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.work-value small { font-size: 12px; color: var(--radulovic-muted); }
+.work-icon { width: 18px; height: 18px; flex-shrink: 0; }
+.card-heading { display: flex; align-items: center; gap: 8px; text-align: left; width: 100%; padding: 0; border: 0; background: none; font: 900 13px/20px Roboto, sans-serif; color: black; }
+.card-heading > .work-icon { margin-left: auto; }
+.card-heading > span:first-child { flex: 1; }
+.day-button { min-height: 44px; background: var(--radulovic-yellow); border: 0; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 8px; font: 900 13px/18px Roboto, sans-serif; color: black; }
+.day-button:disabled { background: #ccc; }
+.work-note { position: relative; width: 100%; min-height: 120px; border: 1px solid var(--radulovic-border); border-radius: 8px; background: white; padding: 12px 12px 25px; text-align: left; color: black; font: 14px/20px Roboto, sans-serif; }
+.work-note > span { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; white-space: pre-wrap; overflow-wrap: anywhere; }
+.work-note small, .note-editor small { position: absolute; bottom: 7px; right: 10px; font-size: 11px; color: var(--radulovic-muted); }
+.muted { color: var(--radulovic-muted); }
+.tasks-card { background: #fffbf0; }
+.tasks-card p { margin: 0; font-size: 13px; }
+.task-count { background: var(--radulovic-yellow); padding: 3px 8px; border-radius: 12px; font-size: 11px; }
+.unread-dot { width: 8px; height: 8px; background: #e00015; border-radius: 50%; }
+.driver-task { display: flex; align-items: flex-start; gap: 8px; padding: 10px; background: #fff; border: 1px solid var(--radulovic-border); border-radius: 8px; }
+.driver-task input { width: 22px; height: 22px; margin: 8px; accent-color: var(--radulovic-yellow); flex-shrink: 0; }
+.task-description { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; padding: 0; background: none; border: 0; text-align: left; color: black; font: 12px/15px Roboto, sans-serif; }
+.task-description strong { font-size: 13px; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.task-description span { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.task-description small { color: var(--radulovic-muted); font-size: 11px; }
+.work-editor, .fuel-editor, .task-dialog { border-radius: 18px; width: min(560px, 90%); max-height: calc(100dvh - 32px); }
+.fuel-editor { width: min(420px, 78%); }
+.task-dialog { width: min(480px, 82%); }
+.work-editor .app-dialog-content, .fuel-editor .app-dialog-content, .task-dialog .app-dialog-content { padding: 20px; }
+.work-editor h2 { font-size: 20px; line-height: 24px; margin-bottom: 14px; }
+.fuel-editor h2, .task-dialog h2 { font-size: 18px; line-height: 24px; }
+.fuel-editor h2 { text-align: center; }
+.work-editor .app-dialog-body, .fuel-editor .app-dialog-body { gap: 14px; }
+.work-editor .app-dialog-actions, .fuel-editor .app-dialog-actions { margin-top: 14px; }
+.work-editor .confirm-button, .fuel-editor .confirm-button { min-width: 78px; }
+.editor-times .work-value { background: #f2f2f2; height: 50px; }
+.editor-times strong { font-size: 18px; }
+.work-input { display: flex; height: 50px; align-items: center; background: white; border: 1px solid var(--radulovic-border); border-radius: 7px; padding: 8px; gap: 5px; }
+.work-input input { width: 100%; min-width: 0; border: none; outline: none; background: transparent; font: 900 20px Roboto, sans-serif; color: black; }
+.work-input small { color: var(--radulovic-muted); }
+.note-editor { display: block; position: relative; border: 1px solid var(--radulovic-border); border-radius: 8px; background: white; padding: 10px 10px 24px; height: 110px; }
+.note-editor textarea { width: 100%; height: 100%; resize: none; border: none; outline: none; background: transparent; font: 16px/20px Roboto, sans-serif; color: black; }
+.fuel-levels { display: flex; gap: 8px; }
+.fuel-levels button { flex: 1; padding: 0; min-width: 0; height: 42px; border: 1px solid var(--radulovic-border); border-radius: 8px; background: white; color: black; font: 900 14px Roboto, sans-serif; }
+.fuel-levels button[aria-pressed=true] { background: var(--radulovic-yellow); border-color: var(--radulovic-yellow); }
+.day-confirmation { border-radius: 8px; background: white; }
+.day-confirmation .confirm-button { border-radius: 8px; }
+.preserve-lines { white-space: pre-wrap; }
+button { cursor: pointer; }
+button:disabled { cursor: default; }
+
+.truck-avatar .work-icon { width: 50px; height: 50px; }
+.work-note { display: flex; flex-direction: column; align-items: flex-start; }
+
+.tasks-card .driver-tasks-notice { margin:0; padding:5px 11px; border:1px solid #ffc400; border-radius:8px; background:rgb(255 196 0 / 12%); color:#777; font:700 13px/24px Roboto,sans-serif; text-align:center; }

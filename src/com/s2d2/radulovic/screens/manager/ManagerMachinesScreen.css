@@ -1,0 +1,36 @@
+.manager-machines { width:100%; margin:0 auto; padding:max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 20px max(20px, env(safe-area-inset-left)); display:flex; flex-direction:column; gap:16px; }
+.machine-title { position:relative; gap:14px; }
+.machine-title .delivery-back { position:absolute; left:-20px; width:20px; }
+.machine-title > span img { width:40px; height:40px; }
+.machine-title h1, .machine-title p { line-height:24px; }
+.machine-tabs { display:flex; }
+.machine-tabs button { flex:1; padding:12px 6px; border:0; border-bottom:3px solid #e8e8e8; background:white; color:#777; font:900 12px/24px Roboto,sans-serif; letter-spacing:.5px; }
+.machine-tabs button[aria-selected=true] { border-bottom-color:#ffc400; color:black; }
+.machine-list { display:flex; flex-direction:column; gap:8px; }
+.machine-card { padding:10px; border:1px solid #e8e8e8; background:white; box-shadow:0 1px 3px #0002; border-radius:8px; }
+.machine-worked { background:#fffcf0; border-color:#ffc400; }
+.machine-other-site { background:#f2f2f2; border-color:#777; }
+.machine-card-heading { display:flex; align-items:center; gap:8px; }
+.machine-checkbox { width:48px; height:48px; flex-shrink:0; display:grid; place-items:center; }
+.machine-checkbox input { width:18px; height:18px; margin:0; accent-color:#ffc400; }
+.machine-card-heading > button { display:flex; align-items:center; gap:8px; flex:1; min-width:0; padding:0; border:0; background:none; text-align:left; color:black; }
+.machine-card-heading > button > span { flex:1; min-width:0; }
+.machine-card-heading strong { display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font:900 14px/24px Roboto,sans-serif; }
+.machine-card-heading small { display:block; color:#777; font:700 11px/24px Roboto,sans-serif; }
+.machine-worked .machine-card-heading small { color:#168a35; }
+.machine-other-site .machine-card-heading strong { color:#777; }
+.machine-card-heading img { width:20px; height:20px; }
+.machine-card-body { display:flex; flex-direction:column; gap:10px; margin-top:10px; }
+.machine-worker-picker .selection-dropdown > label { font-size:12px; line-height:24px; color:black; }
+.machine-worker-picker .selection-field { height:38px; min-height:38px; padding:0 12px; background:transparent; }
+.machine-worker-picker .selection-value { line-height:24px; }
+.machine-worker-picker .selection-field:disabled { opacity:1; color:black; }
+.machine-values { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+.machine-values label, .machine-note-display { display:flex; flex-direction:column; gap:4px; color:#777; font:700 11px/24px Roboto,sans-serif; }
+.machine-values button { height:42px; padding:0 4px; border:1px solid #e8e8e8; border-radius:7px; background:none; color:black; font:700 14px/24px Roboto,sans-serif; overflow:hidden; text-overflow:ellipsis; }
+.machine-note-display button { height:74px; padding:10px; border:1px solid #e8e8e8; border-radius:7px; background:none; color:black; font:400 13px/24px Roboto,sans-serif; text-align:left; overflow:hidden; white-space:pre-wrap; }
+.machine-note-display button.empty { color:#777; }
+.app-dialog.machine-editor { width:90%; max-width:none; }
+.machine-editor .worker-editor-person small { line-height:24px; }
+.machine-editor-note textarea { height:82px; resize:none; }
+@media(min-width:700px) { .app-dialog.machine-editor { width:630px; } }

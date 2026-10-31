@@ -1,0 +1,47 @@
+.admin-documents>.admin-title>button {display:none;}
+.admin-documents>.admin-title>span img {width:34px;height:34px;}
+.admin-documents>.admin-title p {font-size:10px;}
+.admin-documents-sites {padding:8px;background:white;border-radius:8px;box-shadow:0 2px 4px #0003;}
+.admin-documents-sites .selection-dropdown>label {font:700 12px/24px Roboto;margin-bottom:4px;}
+.admin-documents-sites .selection-icon {display:none;}
+.admin-documents-sites .selection-field {height:38px;min-height:38px;padding:0 12px;gap:0;border-width:1px;}
+.admin-documents-sites .selection-value {display:block;white-space:nowrap;text-overflow:ellipsis;font:700 13px/24px Roboto;}
+.admin-documents-sites .selection-chevron {box-sizing:content-box;padding:2px;}
+.admin-documents-sites .selection-options>button {height:44px;min-height:44px;padding:0 12px;}
+.admin-documents-sites .selection-options .selection-value {font-size:14px;}
+.admin-documents>.admin-search {height:48px;min-height:48px;}
+.admin-documents>.admin-search input {font:400 16px/24px Roboto;}
+.admin-documents>.admin-search input::placeholder {color:#777;font-size:14px;opacity:1;}
+.admin-document-filters {display:flex;width:100%;}
+.admin-document-filters button {flex:1;min-width:0;padding:12px 4px;border:0;border-bottom:3px solid #e8e8e8;background:white;color:#777;font:900 11px/24px Roboto;}
+.admin-document-filters button[aria-selected=true] {border-color:#ffc400;color:black;}
+.admin-document-add {display:flex;align-items:center;justify-content:center;gap:8px;height:48px;border:0;border-radius:8px;background:#ffc400;color:black;font:900 14px/24px Roboto;}
+.admin-document-add svg {width:22px;height:22px;fill:black;}
+.admin-documents>.admin-notice {height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 12px;border-color:#ffc400;background:rgb(255 196 0 / 12%);font:700 13px/24px Roboto;}
+.admin-documents[data-filter=PDF]>.admin-notice,.admin-documents[data-filter=DWG]>.admin-notice {border-color:#e00015;background:rgb(224 0 21 / 12%);}
+.admin-documents[data-filter=EXCEL]>.admin-notice {border-color:#0e8a3a;background:rgb(14 138 58 / 12%);}
+.admin-document-list {display:flex;flex-direction:column;gap:10px;}
+.admin-document-row {padding:12px;display:flex;flex-direction:column;gap:10px;border-radius:8px;background:white;outline:1px solid #f0f0f0;outline-offset:-1px;box-shadow:0 1px 2px #0002;}
+.admin-document-row header {display:flex;align-items:center;gap:10px;}
+.admin-document-row header>img {width:42px;height:42px;flex-shrink:0;}
+.admin-document-row header>div {flex:1;min-width:0;}
+.admin-document-row strong {display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere;font:900 14px/24px Roboto;}
+.admin-document-row small {display:block;color:#777;font:700 11px/24px Roboto;}
+.admin-document-actions {display:flex;gap:8px;}
+.admin-document-actions button {flex:1;min-width:0;height:42px;display:flex;align-items:center;justify-content:center;gap:6px;padding:0 10px;border:1px solid #e8e8e8;border-radius:8px;background:white;color:black;font:700 12px/24px Roboto;}
+.admin-document-actions img,.admin-document-actions svg {width:20px;height:20px;flex-shrink:0;}
+.admin-document-actions .destructive {border-color:#f0c6c9;color:#e00015;}
+.admin-documents button[aria-disabled=true] {cursor:default;}
+@media(max-width:350px){.admin-document-actions button {padding:0 4px;gap:4px;}}
+
+.admin-document-feedback {margin:0;color:#777;font:700 13px/24px Roboto;}
+.admin-document-delete.app-dialog {width:90%;max-width:90%;background:white;border-radius:8px;}
+.admin-document-delete .app-dialog-content {padding:20px;display:flex;flex-direction:column;gap:14px;}
+.admin-document-delete.app-dialog h2 {margin:0;font:900 20px/24px Roboto;}
+.admin-document-delete .app-dialog-body {gap:14px;}
+.admin-document-delete .app-dialog-body>strong {color:#07131b;font:700 14px/24px Roboto;overflow-wrap:anywhere;}
+.admin-document-delete .app-dialog-body>p {color:#777;font:400 13px/24px Roboto;}
+.admin-document-delete .app-dialog-body>p.error-message {color:#b3261e;}
+.admin-document-delete .app-dialog-actions {margin:0;gap:8px;}
+.admin-document-delete .app-dialog-actions button {height:44px;border:0;padding:0 16px;background:transparent;color:black;font:700 14px/24px Roboto;}
+.admin-document-delete .app-dialog-actions .admin-document-delete-confirm {padding:0 18px;border-radius:8px;background:#e00015;color:white;font:900 12px/24px Roboto;}

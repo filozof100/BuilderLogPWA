@@ -1,0 +1,51 @@
+.admin-construction-sites>.admin-title {gap:14px;}
+.admin-construction-sites>.admin-title img {width:42px;height:42px;}
+.admin-construction-sites>.admin-title p {line-height:12px;}
+.construction-site-picker {padding:6px 10px;background:white;border-radius:8px;box-shadow:0 2px 4px #0003;}
+.construction-site-picker .selection-dropdown>label {font:700 12px/24px Roboto;margin-bottom:4px;}
+.construction-site-picker .selection-icon {display:none;}
+.construction-site-picker .selection-field {height:38px;min-height:38px;padding:0 12px;gap:0;border-width:1px;}
+.construction-site-picker .selection-value {display:block;white-space:nowrap;text-overflow:ellipsis;font:700 13px/24px Roboto;}
+.construction-site-picker .selection-chevron {box-sizing:content-box;padding:2px;}
+.construction-site-picker .selection-options>button {height:44px;min-height:44px;padding:0 12px;}
+.construction-site-picker .selection-options .selection-value {font-size:14px;}
+.admin-construction-sites>.admin-date-range {padding:8px 12px;gap:12px;}
+.admin-construction-sites .admin-date {gap:7px;}
+.admin-construction-sites .admin-date button {height:48px;padding:0 11px;gap:8px;font:900 13px/24px Roboto;}
+.admin-construction-sites .admin-date img {width:18px;height:18px;}
+.construction-site-costs {display:flex;align-items:center;gap:12px;padding:8px 12px;border:1px solid #c9e4d0;border-radius:8px;background:#eff8f0;color:#16823c;text-align:left;}
+.construction-site-costs>i {width:22px;height:22px;flex-shrink:0;background:currentColor;mask:url('/assets/drawable/ic_wallet_black.svg') center/contain no-repeat;}
+.construction-site-costs>span {flex:1;min-width:0;}
+.construction-site-costs small {display:block;font:700 12px/24px Roboto;color:#07131b;}
+.construction-site-costs strong {display:block;margin-top:2px;font:900 17px/24px Roboto;}
+.construction-site-costs>img {width:24px;height:24px;filter:invert(35%) sepia(70%) saturate(615%) hue-rotate(92deg);}
+.construction-site-management {display:flex;flex-direction:column;gap:12px;}
+.site-management-button {display:flex;align-items:center;justify-content:center;gap:7px;width:100%;height:48px;flex-shrink:0;padding:0 14px;border:1px solid #00000038;border-radius:8px;background:white;color:black;font:700 14px/24px Roboto;}
+.site-management-button svg {flex-shrink:0;}
+.site-management-button.site-add {border:0;background:#ffc400;font-weight:900;}
+.site-management-button.site-edit {background:#f7f7f7;color:#07131b;border-color:#07131b38;}
+.site-management-button.site-close {background:#fff0f0;color:#b3261e;border-color:#b3261e38;}
+.site-management-button.site-open {background:#eff8f0;color:#16823c;border-color:#16823c38;}
+.site-management-button:disabled {background:#f2f2f2;color:#777;border-color:#e8e8e8;}
+.construction-site-identity {padding:4px 0;}
+.construction-site-identity>strong {display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font:700 14px/24px Roboto;}
+.construction-site-identity>span {display:flex;align-items:center;gap:6px;margin-top:6px;font:700 12px/24px Roboto;}
+.construction-site-identity.active>span {color:#16823c;}
+.construction-site-identity.inactive>span {color:#b3261e;}
+.construction-site-identity i {width:8px;height:8px;background:currentColor;border-radius:50%;}
+.construction-site-controls {display:flex;flex-direction:column;gap:8px;}
+.construction-site-controls .site-management-button {justify-content:flex-start;}
+.construction-site-management>.admin-notice {min-height:92px;display:grid;place-items:center;background:rgb(255 196 0 / 12%);font:700 13px/24px Roboto;}
+.construction-site-actions {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;}
+.construction-site-actions>button {height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px;gap:7px;border:0;border-radius:8px;background:white;box-shadow:0 2px 4px #0003;color:black;}
+.construction-site-actions img {width:32px;height:32px;object-fit:contain;}
+.construction-site-actions>button:nth-child(2) img,.construction-site-actions>button:nth-child(4) img {width:40px;height:40px;}
+.construction-site-actions span {font:900 9px/10px Roboto;text-align:center;}
+.construction-site-status-dialog.app-dialog {width:calc(100% - 112px);max-width:560px;background:white;border-radius:8px;}
+.construction-site-status-dialog .app-dialog-content {padding:20px;display:flex;flex-direction:column;gap:16px;}
+.construction-site-status-dialog.app-dialog h2 {margin:0;font:700 18px/24px Roboto;color:black;}
+.construction-site-status-dialog .app-dialog-body {padding:0;margin:0;}
+.construction-site-status-dialog p {margin:0;font:400 14px/24px Roboto;color:#07131b;}
+.construction-site-status-dialog .app-dialog-actions {margin:0;padding:0;display:flex;gap:10px;}
+.construction-site-status-dialog .app-dialog-actions .site-management-button {flex:1;min-width:0;height:48px;padding:0 14px;font:700 14px/24px Roboto;}
+@media(max-width:360px){.construction-site-status-dialog.app-dialog{width:calc(100% - 48px);}}

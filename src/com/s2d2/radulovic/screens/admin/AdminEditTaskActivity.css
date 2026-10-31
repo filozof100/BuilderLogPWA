@@ -1,0 +1,13 @@
+.admin-task-edit-button {width:36px;height:36px;flex:0 0 36px;padding:0;border:0;background:transparent;color:#07131b;display:grid;place-items:center;}
+.admin-task-edit-button svg {width:22px;height:22px;}
+.admin-task-row-actions {display:flex;align-items:center;}
+.admin-task-edit>.admin-title img {width:36px;height:36px;}
+.admin-task-assignment {padding:14px;border-radius:8px;background:rgb(255 196 0 / 12%);color:#07131b;font:700 14px/24px Roboto;white-space:pre-wrap;overflow-wrap:anywhere;}
+.admin-task-edit .admin-task-input textarea {height:140px;}
+.admin-task-edit .error-message {margin:0;color:#b3261e;font:400 12px/20px Roboto;}
+.admin-task-edit-actions {display:flex;gap:12px;}
+.admin-task-edit-actions button {height:48px;flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:6px;border:1px solid #79747e;border-radius:8px;background:white;color:#07131b;font:700 14px/24px Roboto;}
+.admin-task-edit-actions button[type=submit] {border:0;background:#ffc400;color:black;}
+.admin-task-edit-actions button:disabled {opacity:.38;}
+.admin-task-edit-actions button[type=submit]:disabled {background:#e3e3e3;opacity:1;color:#999;}
+.admin-task-edit-actions img {width:20px;height:20px;}

@@ -1,34 +1,102 @@
-import React, { useState } from 'react';
+import { showToast } from '../../ui/components/Toast.jsx';
+import Toast from '../../ui/components/Toast.jsx';
+import React, { useEffect, useRef, useState } from 'react';
+import Session from '../../network/Session.js';
+import WebUtils from '../../network/WebUtils.js';
+import LoginCredentials from '../../LoginCredentials.js';
+import getSharedPreferences from '../../utils/SharedPreferences.js';
 import './LoginActivity.css';
 
-// Visual port of Android LoginActivity.kt at cda0929.
-// Initial Android state: empty username, masked "password", remember-me unchecked.
-// Local form controls are interactive; login and credential persistence are not connected.
-export default function LoginActivity() {
+export default function LoginActivity({ onAuthenticated, initialError = '', initialValues, allowAutomaticLogin = true }) {
+  const [username, setUsername] = useState(initialValues?.username ?? '');
+  const [password, setPassword] = useState(initialValues?.password ?? 'password');
+  const [rememberMe, setRememberMe] = useState(initialValues?.rememberMe ?? false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(initialError);
+  const submitting = useRef(false);
+  const preferences = useRef(getSharedPreferences('com.s2d2.radulovic.LOGIN_PREFERENCES')).current;
+  const [ready, setReady] = useState(!!initialValues);
+  function submit(username, password, rememberMe) {
+    if (submitting.current) return;
+    submitting.current = true; setLoading(true); setError('');
+    sendLoginRequest(preferences, rememberMe, username.trim(), password, onAuthenticated, () => {
+      submitting.current = false; setLoading(false);
+    });
+  }
+  useEffect(() => {
+    if (initialValues) return;
+    let active = true;
+    async function restore() {
+      const savedRememberMe = preferences.getBoolean('remember_me', false);
+      const savedUsername = savedRememberMe ? preferences.getString('username', '') : '';
+      const savedPassword = savedRememberMe ? await LoginCredentials.password(preferences) : 'password';
+      if (!active) return;
+      const remember = preferences.getBoolean('remember_me', false);
+      setUsername(savedUsername); setPassword(savedPassword); setRememberMe(remember); setReady(true);
+      if (allowAutomaticLogin && !initialError && remember && savedUsername.trim() && savedPassword.trim()) submit(savedUsername, savedPassword, remember);
+    }
+    restore();
+    return () => { active = false; };
+  }, []);
+  function login(event) {
+    event.preventDefault();
+    if (!ready || submitting.current) return;
+    if (!username.trim() || !password.trim()) { showToast('Unesite korisničko ime i lozinku'); return; }
+    submit(username, password, rememberMe);
+  }
+
   return (
     <main className="login-screen" aria-labelledby="login-title">
       <LoginHero />
-      <section className="login-fields" aria-label="Prijava">
+      <form autoComplete="off" className="login-fields" aria-label="Prijava" onSubmit={login} aria-busy={loading}>
         <LoginInputField
           id="login-username"
           label="Korisničko ime"
           placeholder="Unesite korisničko ime"
           icon="ic_login_user"
+          value={username}
+          onChange={setUsername}
+          disabled={loading || !ready}
         />
         <LoginInputField
           id="login-password"
           label="Lozinka"
           placeholder="Unesite lozinku"
           icon="ic_login_lock"
+          value={password}
+          onChange={setPassword}
+          disabled={loading || !ready}
           password
         />
-        <RememberMeRow />
-        <button className="login-submit" type="button" aria-disabled="true">
+        <RememberMeRow checked={rememberMe} onChange={setRememberMe} disabled={loading || !ready} />
+        <Toast message={error} onDismiss={() => setError('')}/>
+        <button className="login-submit" type="submit" disabled={loading || !ready}>
           Prijavi se
         </button>
-      </section>
+      </form>
     </main>
   );
+}
+
+function sendLoginRequest(preferences, rememberMe, username, password, onAuthenticated, onFinished) {
+  WebUtils.sendPOSTRequest('login', JSON.stringify({ username, password }), {
+    async onSuccess(responseBody) {
+      try {
+        Session.createUser(responseBody);
+        try {
+          preferences.edit().putString('user_role', Session.getCurrentUser().getRole()).apply();
+        }
+        catch { /* Credential saving below reports unavailable browser storage. */ }
+        if (!await LoginCredentials.save(preferences, username, password, rememberMe)) showToast('Čuvanje lozinke nije uspelo (' + LoginCredentials.lastError + ').');
+        onFinished();
+        onAuthenticated({ username, password, rememberMe });
+      } catch (exception) {
+        Session.clearSession(); onFinished();
+        showToast('Neispravan odgovor servera ' + exception.message);
+      }
+    },
+    onFailure() { onFinished(); showToast('Login nije uspeo'); },
+  });
 }
 
 function LoginHero() {
@@ -59,7 +127,7 @@ function LoginHero() {
   );
 }
 
-function LoginInputField({ id, label, placeholder, icon, password = false }) {
+function LoginInputField({ id, label, placeholder, icon, password = false, value, onChange, disabled }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   return (
@@ -76,7 +144,10 @@ function LoginInputField({ id, label, placeholder, icon, password = false }) {
         <input
           id={id}
           type={password && !passwordVisible ? 'password' : 'text'}
-          defaultValue={password ? 'password' : ''}
+          value={value}
+          onChange={event => onChange(event.target.value)}
+          disabled={disabled}
+          name={password ? 'password' : 'username'}
           placeholder={placeholder}
           autoComplete="off"
           autoCapitalize="none"
@@ -105,7 +176,7 @@ function LoginInputField({ id, label, placeholder, icon, password = false }) {
   );
 }
 
-function RememberMeRow() {
+function RememberMeRow({ checked, onChange, disabled }) {
   return (
     <label className="login-remember">
       <span className="login-checkbox-control">
@@ -113,7 +184,9 @@ function RememberMeRow() {
           className="login-checkbox"
           type="checkbox"
           name="rememberMe"
-          defaultChecked={false}
+          checked={checked}
+          onChange={event => onChange(event.target.checked)}
+          disabled={disabled}
         />
         <svg
           className="login-checkbox-check"
